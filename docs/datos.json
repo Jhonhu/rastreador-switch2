@@ -1,6 +1,6 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-09-28T19:19:39Z",
+ "generado_utc": "2026-09-28T21:07:30Z",
  "precio_objetivo": 950000,
  "mejor": {
   "producto_id": "gameplanet-mario-kart",
@@ -18,7 +18,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-09-28T19:19:18Z",
+   "ultima_lectura_utc": "2026-09-28T21:07:11Z",
    "precio_actual": 1287908,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1287908,
@@ -28,13 +28,17 @@
    },
    "maximo": {
     "efectivo": 1287908,
-    "fecha_utc": "2026-09-28T19:19:18Z"
+    "fecha_utc": "2026-09-28T21:07:11Z"
    },
-   "lecturas_ok": 1,
+   "lecturas_ok": 2,
    "racha_fallos": 0,
    "serie": [
     [
      "2026-09-28T19:19:18Z",
+     1287908
+    ],
+    [
+     "2026-09-28T21:07:11Z",
      1287908
     ]
    ]
@@ -47,13 +51,13 @@
    "url": "https://www.liverpool.com.mx/tienda/pdp/consola-nintendo-switch-2-de-256-gb-edici%C3%B3n-bundle-pok%C3%A9mon/1186172911",
    "valor_extra": 150000,
    "precio_objetivo": 950000,
-   "estado": "ok",
-   "motivo": "",
-   "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-09-28T19:19:22Z",
-   "precio_actual": 1370708,
-   "precio_lista_actual": 1489900,
-   "efectivo_actual": 1220708,
+   "estado": "no_encontrado",
+   "motivo": "HTTP 404: el producto necesita URL nueva",
+   "vendedor": null,
+   "ultima_lectura_utc": "2026-09-28T21:07:14Z",
+   "precio_actual": null,
+   "precio_lista_actual": null,
+   "efectivo_actual": null,
    "minimo": {
     "efectivo": 1220708,
     "fecha_utc": "2026-09-28T19:19:22Z"
@@ -63,11 +67,43 @@
     "fecha_utc": "2026-09-28T19:19:22Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 0,
+   "racha_fallos": 1,
    "serie": [
     [
      "2026-09-28T19:19:22Z",
      1220708
+    ]
+   ]
+  },
+  {
+   "id": "liverpool-bundle-sports",
+   "tienda": "liverpool",
+   "descripcion": "Switch 2 256 GB edición Bundle Sports Resort",
+   "version": "nacional",
+   "url": "https://www.liverpool.com.mx/tienda/pdp/consola-fija-portatil-switch-2-de-256-gb-edicion-bundle-sports-resort/1209428225",
+   "valor_extra": 150000,
+   "precio_objetivo": 950000,
+   "estado": "ok",
+   "motivo": "",
+   "vendedor": "Liverpool",
+   "ultima_lectura_utc": "2026-09-28T21:07:18Z",
+   "precio_actual": 1352308,
+   "precio_lista_actual": 1469900,
+   "efectivo_actual": 1202308,
+   "minimo": {
+    "efectivo": 1202308,
+    "fecha_utc": "2026-09-28T21:07:18Z"
+   },
+   "maximo": {
+    "efectivo": 1202308,
+    "fecha_utc": "2026-09-28T21:07:18Z"
+   },
+   "lecturas_ok": 1,
+   "racha_fallos": 0,
+   "serie": [
+    [
+     "2026-09-28T21:07:18Z",
+     1202308
     ]
    ]
   },
@@ -79,13 +115,13 @@
    "url": "https://www.walmart.com.mx/ip/consola-nintendo-switch-2-256-gb/00004549688581",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "ok",
-   "motivo": "",
-   "vendedor": "Walmart",
-   "ultima_lectura_utc": "2026-09-28T19:19:26Z",
-   "precio_actual": 1079000,
-   "precio_lista_actual": 1399900,
-   "efectivo_actual": 1079000,
+   "estado": "bloqueado",
+   "motivo": "redirigido fuera de la página de producto (/blocked)",
+   "vendedor": null,
+   "ultima_lectura_utc": "2026-09-28T21:07:20Z",
+   "precio_actual": null,
+   "precio_lista_actual": null,
+   "efectivo_actual": null,
    "minimo": {
     "efectivo": 1079000,
     "fecha_utc": "2026-09-28T19:19:26Z"
@@ -95,7 +131,7 @@
     "fecha_utc": "2026-09-28T19:19:26Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 0,
+   "racha_fallos": 1,
    "serie": [
     [
      "2026-09-28T19:19:26Z",
@@ -114,7 +150,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-09-28T19:19:31Z",
+   "ultima_lectura_utc": "2026-09-28T21:07:23Z",
    "precio_actual": 1099999,
    "precio_lista_actual": null,
    "efectivo_actual": 1099999,
@@ -124,13 +160,17 @@
    },
    "maximo": {
     "efectivo": 1099999,
-    "fecha_utc": "2026-09-28T19:19:31Z"
+    "fecha_utc": "2026-09-28T21:07:23Z"
    },
-   "lecturas_ok": 1,
+   "lecturas_ok": 2,
    "racha_fallos": 0,
    "serie": [
     [
      "2026-09-28T19:19:31Z",
+     1099999
+    ],
+    [
+     "2026-09-28T21:07:23Z",
      1099999
     ]
    ]
@@ -146,7 +186,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-09-28T19:19:33Z",
+   "ultima_lectura_utc": "2026-09-28T21:07:25Z",
    "precio_actual": 1199999,
    "precio_lista_actual": null,
    "efectivo_actual": 1019999,
@@ -156,13 +196,17 @@
    },
    "maximo": {
     "efectivo": 1019999,
-    "fecha_utc": "2026-09-28T19:19:33Z"
+    "fecha_utc": "2026-09-28T21:07:25Z"
    },
-   "lecturas_ok": 1,
+   "lecturas_ok": 2,
    "racha_fallos": 0,
    "serie": [
     [
      "2026-09-28T19:19:33Z",
+     1019999
+    ],
+    [
+     "2026-09-28T21:07:25Z",
      1019999
     ]
    ]
@@ -178,7 +222,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-09-28T19:19:36Z",
+   "ultima_lectura_utc": "2026-09-28T21:07:28Z",
    "precio_actual": 1399900,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1399900,
@@ -188,13 +232,17 @@
    },
    "maximo": {
     "efectivo": 1399900,
-    "fecha_utc": "2026-09-28T19:19:36Z"
+    "fecha_utc": "2026-09-28T21:07:28Z"
    },
-   "lecturas_ok": 1,
+   "lecturas_ok": 2,
    "racha_fallos": 0,
    "serie": [
     [
      "2026-09-28T19:19:36Z",
+     1399900
+    ],
+    [
+     "2026-09-28T21:07:28Z",
      1399900
     ]
    ]
@@ -210,7 +258,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-09-28T19:19:39Z",
+   "ultima_lectura_utc": "2026-09-28T21:07:30Z",
    "precio_actual": 1524900,
    "precio_lista_actual": 1524900,
    "efectivo_actual": 1344900,
@@ -220,13 +268,17 @@
    },
    "maximo": {
     "efectivo": 1344900,
-    "fecha_utc": "2026-09-28T19:19:39Z"
+    "fecha_utc": "2026-09-28T21:07:30Z"
    },
-   "lecturas_ok": 1,
+   "lecturas_ok": 2,
    "racha_fallos": 0,
    "serie": [
     [
      "2026-09-28T19:19:39Z",
+     1344900
+    ],
+    [
+     "2026-09-28T21:07:30Z",
      1344900
     ]
    ]
