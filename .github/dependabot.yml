@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # requirements.txt y requirements-dev.txt (versiones fijas: cada cambio llega como PR)
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+
+  # Actions fijadas por SHA: Dependabot actualiza el SHA y el comentario de versión
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday

@@ -1,0 +1,56 @@
+name: Rastreo diario
+
+on:
+  schedule:
+    # 14:23 UTC = 08:23 en Ciudad de México (UTC-6 todo el año; sin horario de verano desde 2022).
+    # Minuto no redondo a propósito: a las :00 GitHub tiene picos de carga y retrasa o salta crons.
+    - cron: "23 14 * * *"
+  workflow_dispatch: {}  # botón "Run workflow" en la pestaña Actions
+
+permissions: {}  # nada por omisión; el job pide solo lo que usa
+
+concurrency:  # nunca dos ejecuciones a la vez (evita choques al hacer push del CSV)
+  group: rastreo
+  cancel-in-progress: false
+
+jobs:
+  rastrear:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write  # único permiso: commitear data/lecturas.csv y docs/datos.json
+    steps:
+      # Actions fijadas por SHA de commit (una etiqueta se puede mover); Dependabot las actualiza.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip check
+
+      - name: Rastrear precios
+        env:  # los secretos solo existen en este paso; GitHub los enmascara en el log
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m rastreador
+
+      - name: Guardar historial y dashboard
+        # También si el paso anterior falló (p. ej. todas las tiendas caídas): el fallo queda registrado.
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data docs/datos.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios que guardar."
+            exit 0
+          fi
+          git commit -m "datos: lecturas del $(date -u +%F)"
+          git pull --rebase --quiet
+          git push

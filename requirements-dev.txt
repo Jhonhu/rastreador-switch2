@@ -1,0 +1,12 @@
+# Dependencias de desarrollo: todo lo de ejecución + herramientas de prueba.
+-r requirements.txt
+
+# --- Directas
+pytest==9.1.1
+
+# --- Transitivas de pytest
+iniconfig==2.3.0
+packaging==26.3
+pluggy==1.6.0
+Pygments==2.21.0
+colorama==0.4.6 ; sys_platform == "win32"   # solo Windows (colores en consola)

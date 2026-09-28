@@ -1,0 +1,133 @@
+/* Tokens por rol. El modo oscuro son pasos propios de la misma paleta, no un filtro. */
+:root {
+  color-scheme: light;
+  --plano: #f9f9f7;
+  --superficie: #fcfcfb;
+  --tinta: #0b0b0b;
+  --tinta-2: #52514e;
+  --tinta-tenue: #6b6a65;
+  --reticula: #e1e0d9;
+  --eje: #c3c2b7;
+  --borde: rgba(11, 11, 11, 0.10);
+  --enlace: #1c5cab;
+
+  --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a; --series-4: #eda100;
+  --series-5: #e87ba4; --series-6: #008300; --series-7: #4a3aa7; --series-8: #e34948;
+
+  --estado-bien: #0ca30c; --estado-aviso: #fab219; --estado-serio: #ec835a; --estado-critico: #d03b3b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --plano: #0d0d0d;
+    --superficie: #1a1a19;
+    --tinta: #ffffff;
+    --tinta-2: #c3c2b7;
+    --tinta-tenue: #a3a29b;
+    --reticula: #2c2c2a;
+    --eje: #383835;
+    --borde: rgba(255, 255, 255, 0.10);
+    --enlace: #86b6ef;
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+    --series-5: #d55181; --series-6: #008300; --series-7: #9085e9; --series-8: #e66767;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--plano);
+  color: var(--tinta);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.pagina { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+h2 { font-size: 1.1rem; margin: 32px 0 12px; }
+a { color: var(--enlace); }
+.subtitulo, .nota, .pie { color: var(--tinta-2); }
+.subtitulo { margin: 0; }
+.nota { font-size: 0.85rem; margin: 8px 0 0; }
+.pie { font-size: 0.85rem; margin-top: 40px; border-top: 1px solid var(--reticula); padding-top: 12px; }
+
+/* ---- cifra destacada */
+.destacado {
+  margin-top: 24px; padding: 20px; background: var(--superficie);
+  border: 1px solid var(--borde); border-radius: 12px;
+}
+.destacado .etiqueta { font-size: 0.9rem; font-weight: 500; color: var(--tinta-2); margin: 0; }
+.cifra { font-size: 3rem; font-weight: 600; margin: 4px 0; line-height: 1.1; }
+.detalle { margin: 0; color: var(--tinta-2); }
+
+/* ---- tablas */
+.tabla-contenedor { overflow-x: auto; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; }
+.tabla { width: 100%; border-collapse: collapse; min-width: 760px; }
+#tabla-productos td:first-child { min-width: 240px; }
+#tabla-productos td:nth-child(2) { min-width: 190px; }
+#tabla-productos td:last-child { white-space: nowrap; }
+.tabla th, .tabla td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--reticula); }
+.tabla tbody tr:last-child td { border-bottom: 0; }
+.tabla th { font-size: 0.8rem; font-weight: 600; color: var(--tinta-2); }
+.tabla .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.secundario { display: block; font-size: 0.8rem; color: var(--tinta-2); }
+.producto-nombre { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+
+/* clave de línea: identifica la serie sin teñir el texto */
+.clave { flex: none; width: 14px; height: 2px; border-radius: 1px; background: var(--color-serie); }
+
+/* ---- estado: icono + texto, nunca solo color */
+.estado { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; white-space: nowrap; }
+.estado-icono {
+  display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%;
+  font-size: 11px; font-weight: 700; color: #0b0b0b; background: var(--color-estado);
+}
+.estado-bien { --color-estado: var(--estado-bien); }
+.estado-aviso { --color-estado: var(--estado-aviso); }
+.estado-serio { --color-estado: var(--estado-serio); }
+.estado-critico { --color-estado: var(--estado-critico); }
+.estado-bien .estado-icono, .estado-critico .estado-icono { color: #ffffff; }
+.estado-sin { --color-estado: var(--eje); }
+
+/* ---- leyenda y gráfica */
+.leyenda { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 0 0 8px; font-size: 0.85rem; color: var(--tinta-2); }
+.leyenda li { display: flex; align-items: center; gap: 6px; }
+
+.grafica {
+  position: relative; background: var(--superficie); border: 1px solid var(--borde);
+  border-radius: 12px; padding: 8px; min-height: 120px;
+}
+.grafica svg { display: block; width: 100%; height: auto; overflow: visible; }
+.grafica svg:focus-visible { outline: 2px solid var(--enlace); outline-offset: 2px; border-radius: 8px; }
+.vacio { color: var(--tinta-2); padding: 24px; margin: 0; }
+
+.reticula { stroke: var(--reticula); stroke-width: 1; }
+.eje { stroke: var(--eje); stroke-width: 1; }
+.texto-eje { fill: var(--tinta-tenue); font-size: 12px; font-variant-numeric: tabular-nums; }
+.objetivo { stroke: var(--tinta-2); stroke-width: 1; }
+.texto-objetivo { fill: var(--tinta-2); font-size: 12px; }
+.linea { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; stroke: var(--color-serie); }
+.punto { fill: var(--color-serie); stroke: var(--superficie); stroke-width: 2; }
+.cursor { stroke: var(--tinta-tenue); stroke-width: 1; }
+.zona-sensible { fill: transparent; cursor: crosshair; }
+
+.serie-1 { --color-serie: var(--series-1); } .serie-2 { --color-serie: var(--series-2); }
+.serie-3 { --color-serie: var(--series-3); } .serie-4 { --color-serie: var(--series-4); }
+.serie-5 { --color-serie: var(--series-5); } .serie-6 { --color-serie: var(--series-6); }
+.serie-7 { --color-serie: var(--series-7); } .serie-8 { --color-serie: var(--series-8); }
+.serie-otra { --color-serie: var(--tinta-tenue); }
+
+.tooltip {
+  position: absolute; pointer-events: none; z-index: 1; min-width: 200px; max-width: 360px;
+  background: var(--superficie); border: 1px solid var(--borde); border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); padding: 8px 10px; font-size: 0.8rem;
+}
+.tooltip-fecha { color: var(--tinta-2); margin-bottom: 4px; }
+.tooltip-fila { display: flex; align-items: center; gap: 8px; }
+.tooltip-valor { font-weight: 600; color: var(--tinta); font-variant-numeric: tabular-nums; }
+.tooltip-nombre { color: var(--tinta-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.detalles { margin-top: 12px; }
+.detalles summary { cursor: pointer; color: var(--enlace); margin-bottom: 8px; }
+.error-carga { color: var(--estado-critico); font-weight: 600; }

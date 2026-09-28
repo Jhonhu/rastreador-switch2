@@ -1,0 +1,4 @@
+# Todo el texto con fin de línea LF en el repo y en la copia de trabajo, también en Windows:
+# así los commits del bot (Linux) y los tuyos (Windows) no difieren solo por el CR.
+* text=auto eol=lf
+*.csv text eol=lf

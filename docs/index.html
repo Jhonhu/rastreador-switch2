@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- GitHub Pages no permite cabeceras propias: la CSP va en <meta>.
+       Solo scripts, estilos y datos de este mismo sitio; nada inline, nada externo. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Rastreador Switch 2</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="encabezado">
+      <h1>Rastreador Switch 2</h1>
+      <p class="subtitulo">
+        Precio efectivo = precio de la tienda − lo que vale para ti el juego incluido.
+        <span id="actualizado"></span>
+      </p>
+    </header>
+
+    <section class="destacado" aria-labelledby="titulo-mejor">
+      <h2 id="titulo-mejor" class="etiqueta">Mejor precio efectivo hoy</h2>
+      <p id="mejor-valor" class="cifra">—</p>
+      <p id="mejor-detalle" class="detalle"></p>
+    </section>
+
+    <section aria-labelledby="titulo-productos">
+      <h2 id="titulo-productos">Productos</h2>
+      <div class="tabla-contenedor">
+        <table class="tabla" id="tabla-productos">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Estado</th>
+              <th scope="col" class="num">Actual</th>
+              <th scope="col" class="num">Mínimo</th>
+              <th scope="col" class="num">Máximo</th>
+              <th scope="col">Última lectura</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="nota">Mínimo y máximo usan solo lecturas en venta por la propia tienda. Montos en MXN.</p>
+    </section>
+
+    <section aria-labelledby="titulo-historial">
+      <h2 id="titulo-historial">Historial del precio efectivo</h2>
+      <ul class="leyenda" id="leyenda"></ul>
+      <div class="grafica" id="grafica">
+        <p class="vacio" id="grafica-vacia" hidden>Aún no hay lecturas válidas para graficar.</p>
+      </div>
+      <details class="detalles">
+        <summary>Ver el historial como tabla</summary>
+        <div class="tabla-contenedor">
+          <table class="tabla" id="tabla-historial"><thead></thead><tbody></tbody></table>
+        </div>
+      </details>
+    </section>
+
+    <p class="error-carga" id="error-carga" role="alert" hidden></p>
+
+    <footer class="pie">
+      Datos: <code>data/lecturas.csv</code> del repositorio, una lectura diaria por producto.
+      Horas en tiempo de Ciudad de México.
+    </footer>
+  </main>
+</body>
+</html>

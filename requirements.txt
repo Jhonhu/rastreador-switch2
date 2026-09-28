@@ -1,0 +1,17 @@
+# Dependencias de ejecución (lo único que instala el workflow diario).
+# Versiones exactas (==) de TODO el árbol, incluidas las transitivas: local y
+# GitHub Actions instalan exactamente lo mismo. Equivale a un package-lock.json.
+# Dependabot (.github/dependabot.yml) propone actualizaciones por PR.
+
+# --- Directas
+requests==2.34.2          # HTTP: timeouts y descarga en stream con límite de tamaño
+beautifulsoup4==4.15.0    # ubicar <script> de datos en el HTML (JSON-LD, __NEXT_DATA__, RSC)
+PyYAML==6.0.3             # leer productos.yaml, SIEMPRE con yaml.safe_load
+
+# --- Transitivas (las arrastran las directas; fijadas para reproducibilidad)
+certifi==2026.7.22        # requests: certificados raíz para HTTPS
+charset-normalizer==3.5.1 # requests
+idna==3.20                # requests
+urllib3==2.8.0            # requests
+soupsieve==2.10           # beautifulsoup4
+typing_extensions==4.16.0 # beautifulsoup4
