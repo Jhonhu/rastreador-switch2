@@ -22,7 +22,7 @@ import requests
 
 USER_AGENT = (
     "rastreador-switch2/0.1 (uso personal; historial de precios; "
-    "1 lectura diaria por producto)"
+    "2 lecturas diarias por producto)"
 )
 TIMEOUT = (10, 30)  # (conexión, lectura) en segundos
 LIMITE_BYTES = 8 * 1024 * 1024

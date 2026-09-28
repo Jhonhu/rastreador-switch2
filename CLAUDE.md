@@ -5,7 +5,7 @@ aquí van las reglas de trabajo y los porqués.
 
 ## Qué es
 Rastreador de **historial** de precios de Nintendo Switch 2 en tiendas de México.
-Cada día, GitHub Actions hace una lectura por producto (`productos.yaml`), la
+Dos veces al día (08:23 y 20:23 CDMX), GitHub Actions hace una lectura por producto (`productos.yaml`), la
 agrega a `data/lecturas.csv`, regenera `docs/datos.json` (dashboard en GitHub
 Pages) y avisa por Telegram solo si hay un nuevo mínimo o se cruza el objetivo.
 Costo $0. Repositorio público.

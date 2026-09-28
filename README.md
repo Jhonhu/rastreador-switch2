@@ -4,7 +4,7 @@ Te dice **cuándo** una Switch 2 está a un precio realmente bueno, según el
 **historial real** de precios y no según el "% de descuento" que anuncian las
 tiendas (que suelen inflar el precio "anterior").
 
-Cada día, GitHub Actions lee una vez cada producto de `productos.yaml` y:
+Dos veces al día (08:23 y 20:23, hora de CDMX), GitHub Actions lee cada producto de `productos.yaml` y:
 
 1. agrega la lectura al historial `data/lecturas.csv` (también las fallidas, con su motivo);
 2. regenera el dashboard estático en GitHub Pages (`docs/`);
@@ -151,7 +151,7 @@ En uno o dos minutos el dashboard queda en
 2. **Rastreo.** En **Actions → "Rastreo diario" → Run workflow**. Al terminar
    debe haber un commit `datos: lecturas del AAAA-MM-DD` del bot, y el dashboard
    se actualiza.
-3. Desde ahí corre solo todos los días a las **08:23 (hora de CDMX)**.
+3. Desde ahí corre solo **dos veces al día: 08:23 y 20:23 (hora de CDMX)**.
 
 Los workflows piden permisos explícitos: solo "Rastreo diario" puede escribir
 (`contents: write`) para commitear los datos. No hace falta cambiar los permisos
@@ -208,7 +208,7 @@ tests/                    pytest; fixtures reales recortados en tests/fixtures
   2026-09-28): desde Actions sus lecturas quedan como `bloqueado`. Liverpool,
   Gameplanet y Sears sí responden. Una tienda puede empezar a bloquear en
   cualquier momento; el sondeo manual sirve para revisarlo.
-- **Una lectura al día.** Una oferta relámpago de pocas horas puede pasar sin
+- **Dos lecturas al día (08:23 y 20:23).** Una oferta relámpago de pocas horas puede pasar sin
   que la veas.
 - **El cron de GitHub no es puntual:** puede retrasarse desde minutos hasta
   horas, o saltarse una ejecución en horas de carga.
@@ -216,7 +216,9 @@ tests/                    pytest; fixtures reales recortados en tests/fixtures
   60 días sin actividad (avisa por email antes). No verifiqué si los commits del
   bot cuentan como actividad. Si se desactiva, se reactiva con un botón en Actions.
 - **Precios que no ve:** promociones bancarias, cupones, meses sin intereses,
-  precio con tarjeta departamental, envío. Tampoco Amazon (uso Keepa aparte) ni Coppel.
+  precio con tarjeta departamental, envío. Tampoco Amazon (uso Keepa aparte), Coppel
+  ni Mercado Libre (su API exige OAuth con tokens que rotan y su web tiene verificación
+  anti-bot; ver `investigacion/HALLAZGOS.md`).
 - **Liverpool:** se toma el precio promocional que la página muestra como
   principal. No verifiqué si alguna promoción exige una condición (p. ej. su
   tarjeta). Tampoco pude ver cómo luce un producto agotado ni uno de
@@ -231,7 +233,7 @@ tests/                    pytest; fixtures reales recortados en tests/fixtures
 - **Si Telegram falla ese día, la alerta se pierde:** al día siguiente el cruce
   ya no es "nuevo". El workflow queda en rojo (código 3) y el dato sí está en el CSV.
 - **Baja lenta:** un precio que baje menos de `baja_minima_alerta` cada día nunca
-  dispara "nuevo mínimo" (cada día compara contra el mínimo de ayer). La alerta
+  dispara "nuevo mínimo" (cada lectura compara contra el mínimo anterior). La alerta
   de cruce del objetivo sí lo detecta.
 - **`valor_extra` es subjetivo** y se aplica a todo el historial con tu valoración
   actual: si lo cambias, cambian también los mínimos pasados.

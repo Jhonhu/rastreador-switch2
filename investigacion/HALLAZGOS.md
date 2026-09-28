@@ -19,3 +19,18 @@ Notas:
 - No verificado: Liverpool agotado (todo tenía stock), 404 de Walmart.
 
 Regenerar fixtures: ver el docstring de `investigacion/recortar_fixtures.py`.
+
+## Mercado Libre: descartada (2026-09-28)
+- **API oficial** (`api.mercadolibre.com`): sin token responde 403 a todo, incluso
+  `/sites/MLM`, la búsqueda y los artículos (`blocked_by: PolicyAgent`), aunque la
+  documentación diga que la búsqueda es pública. Con token solo existe OAuth
+  "authorization code": access token de 6 h y refresh token de **un solo uso que
+  rota**. En Actions habría que guardar el nuevo en cada corrida (un PAT con
+  permiso de escribir secrets o un archivo cifrado en el repo público): demasiado
+  riesgo para el beneficio. No se verificó si con token se leen artículos de otros.
+- **Web** (`listado.mercadolibre.com.mx`): redirige a `/gz/account-verification`
+  (anti-bot) incluso desde IP residencial. No se evade.
+
+## Amazon: fuera de alcance
+Bloquea IPs de datacenter y sus términos prohíben el scraping; la API de afiliados
+exige ventas. Se usa Keepa (historial y alertas propias) fuera de este proyecto.

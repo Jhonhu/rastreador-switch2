@@ -55,11 +55,11 @@ def test_secretos_solo_en_el_paso_que_los_usa(ruta):
             assert "secrets." not in paso.get("run", ""), "un secreto interpolado en `run` puede acabar en el log"
 
 
-def test_cron_en_minuto_no_redondo_cerca_de_las_8_de_cdmx():
+def test_cron_dos_veces_al_dia_en_minuto_no_redondo():
     cron = cargar(RAIZ / ".github" / "workflows" / "rastreo.yml")["on"]["schedule"][0]["cron"]
-    minuto, hora, *_ = cron.split()
+    minuto, horas, *_ = cron.split()
     assert minuto not in {"0", "00", "15", "30", "45"}
-    assert hora == "14"  # 14:xx UTC = 08:xx en CDMX (UTC-6)
+    assert horas == "2,14"  # 02:xx y 14:xx UTC = 20:xx y 08:xx en CDMX (UTC-6)
 
 
 # ------------------------------------------------------------------ dashboard

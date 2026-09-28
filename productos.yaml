@@ -3,7 +3,7 @@
 # Claves desconocidas = error: un typo como "valor_extar" no pasa en silencio.
 
 ajustes:
-  lecturas_minimas: 3        # lecturas OK previas antes de alertar "nuevo mínimo histórico"
+  lecturas_minimas: 6        # lecturas OK previas antes de alertar "nuevo mínimo" (2 al día = ~3 días)
   precio_min_valido: 5000    # fuera de este rango la lectura es error: evita tomar
   precio_max_valido: 25000   #   la mensualidad MSI (~$1,000) como si fuera el precio
   precio_objetivo: 9500      # alerta cuando el precio efectivo cruce hacia abajo
