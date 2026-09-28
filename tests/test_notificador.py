@@ -112,3 +112,20 @@ def test_logs_de_urllib3_en_debug_no_se_escriben_tras_main(caplog):
     with caplog.at_level(logging.DEBUG):
         logging.getLogger("urllib3.connectionpool").debug("POST /bot%s/sendMessage", TOKEN)
     assert TOKEN not in caplog.text
+
+
+def test_buscar_chats_lee_getupdates():
+    actualizaciones = [
+        {"update_id": 1, "message": {"chat": {"id": 42, "first_name": "Ana", "last_name": "P"}, "text": "hola"}},
+        {"update_id": 2, "message": {"chat": {"id": -100777, "title": "Grupo precios"}, "text": "hola"}},
+        {"update_id": 3, "message": {"chat": {"id": 42, "first_name": "Ana", "last_name": "P"}, "text": "otra vez"}},
+    ]
+    adaptador = AdaptadorFalso(cuerpo={"ok": True, "result": actualizaciones})
+    assert notificador_con(adaptador).buscar_chats() == [("42", "Ana P"), ("-100777", "Grupo precios")]
+    assert adaptador.peticiones[0].url.endswith("/getUpdates")
+
+
+def test_buscar_chats_con_fallo_de_red_no_filtra_el_token():
+    with pytest.raises(ErrorNotificacion) as info:
+        notificador_con(AdaptadorFalso(error=requests.ConnectionError)).buscar_chats()
+    assert TOKEN not in todo_lo_visible(info.value)

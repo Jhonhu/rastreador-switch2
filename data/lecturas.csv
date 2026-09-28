@@ -1,0 +1,8 @@
+fecha_utc,producto_id,tienda,estado,precio_centavos,precio_lista_centavos,vendedor,motivo
+2026-09-28T19:19:18Z,liverpool-estandar,liverpool,ok,1287908,1399900,Liverpool,
+2026-09-28T19:19:22Z,liverpool-bundle-pokemon,liverpool,ok,1370708,1489900,Liverpool,
+2026-09-28T19:19:26Z,walmart-estandar,walmart,ok,1079000,1399900,Walmart,
+2026-09-28T19:19:31Z,gameplanet-estandar,gameplanet,ok,1099999,,Gameplanet,
+2026-09-28T19:19:33Z,gameplanet-mario-kart,gameplanet,ok,1199999,,Gameplanet,
+2026-09-28T19:19:36Z,sears-estandar,sears,ok,1399900,1399900,SEARS,
+2026-09-28T19:19:39Z,sears-mario-kart,sears,ok,1524900,1524900,SEARS,

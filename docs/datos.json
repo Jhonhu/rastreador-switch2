@@ -1,8 +1,11 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-09-28T19:05:34Z",
+ "generado_utc": "2026-09-28T19:19:39Z",
  "precio_objetivo": 950000,
- "mejor": null,
+ "mejor": {
+  "producto_id": "gameplanet-mario-kart",
+  "efectivo": 1019999
+ },
  "productos": [
   {
    "id": "liverpool-estandar",
@@ -12,18 +15,29 @@
    "url": "https://www.liverpool.com.mx/tienda/pdp/consola-nintendo-switch-2-de-256-gb-edicion-estandar/1177646322",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "sin_datos",
+   "estado": "ok",
    "motivo": "",
-   "vendedor": null,
-   "ultima_lectura_utc": null,
-   "precio_actual": null,
-   "precio_lista_actual": null,
-   "efectivo_actual": null,
-   "minimo": null,
-   "maximo": null,
-   "lecturas_ok": 0,
+   "vendedor": "Liverpool",
+   "ultima_lectura_utc": "2026-09-28T19:19:18Z",
+   "precio_actual": 1287908,
+   "precio_lista_actual": 1399900,
+   "efectivo_actual": 1287908,
+   "minimo": {
+    "efectivo": 1287908,
+    "fecha_utc": "2026-09-28T19:19:18Z"
+   },
+   "maximo": {
+    "efectivo": 1287908,
+    "fecha_utc": "2026-09-28T19:19:18Z"
+   },
+   "lecturas_ok": 1,
    "racha_fallos": 0,
-   "serie": []
+   "serie": [
+    [
+     "2026-09-28T19:19:18Z",
+     1287908
+    ]
+   ]
   },
   {
    "id": "liverpool-bundle-pokemon",
@@ -33,18 +47,29 @@
    "url": "https://www.liverpool.com.mx/tienda/pdp/consola-nintendo-switch-2-de-256-gb-edici%C3%B3n-bundle-pok%C3%A9mon/1186172911",
    "valor_extra": 150000,
    "precio_objetivo": 950000,
-   "estado": "sin_datos",
+   "estado": "ok",
    "motivo": "",
-   "vendedor": null,
-   "ultima_lectura_utc": null,
-   "precio_actual": null,
-   "precio_lista_actual": null,
-   "efectivo_actual": null,
-   "minimo": null,
-   "maximo": null,
-   "lecturas_ok": 0,
+   "vendedor": "Liverpool",
+   "ultima_lectura_utc": "2026-09-28T19:19:22Z",
+   "precio_actual": 1370708,
+   "precio_lista_actual": 1489900,
+   "efectivo_actual": 1220708,
+   "minimo": {
+    "efectivo": 1220708,
+    "fecha_utc": "2026-09-28T19:19:22Z"
+   },
+   "maximo": {
+    "efectivo": 1220708,
+    "fecha_utc": "2026-09-28T19:19:22Z"
+   },
+   "lecturas_ok": 1,
    "racha_fallos": 0,
-   "serie": []
+   "serie": [
+    [
+     "2026-09-28T19:19:22Z",
+     1220708
+    ]
+   ]
   },
   {
    "id": "walmart-estandar",
@@ -54,18 +79,29 @@
    "url": "https://www.walmart.com.mx/ip/consola-nintendo-switch-2-256-gb/00004549688581",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "sin_datos",
+   "estado": "ok",
    "motivo": "",
-   "vendedor": null,
-   "ultima_lectura_utc": null,
-   "precio_actual": null,
-   "precio_lista_actual": null,
-   "efectivo_actual": null,
-   "minimo": null,
-   "maximo": null,
-   "lecturas_ok": 0,
+   "vendedor": "Walmart",
+   "ultima_lectura_utc": "2026-09-28T19:19:26Z",
+   "precio_actual": 1079000,
+   "precio_lista_actual": 1399900,
+   "efectivo_actual": 1079000,
+   "minimo": {
+    "efectivo": 1079000,
+    "fecha_utc": "2026-09-28T19:19:26Z"
+   },
+   "maximo": {
+    "efectivo": 1079000,
+    "fecha_utc": "2026-09-28T19:19:26Z"
+   },
+   "lecturas_ok": 1,
    "racha_fallos": 0,
-   "serie": []
+   "serie": [
+    [
+     "2026-09-28T19:19:26Z",
+     1079000
+    ]
+   ]
   },
   {
    "id": "gameplanet-estandar",
@@ -75,18 +111,29 @@
    "url": "https://gameplanet.com/producto/consola-nintendo-switch-2-con-adaptador-nsw2/",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "sin_datos",
+   "estado": "ok",
    "motivo": "",
-   "vendedor": null,
-   "ultima_lectura_utc": null,
-   "precio_actual": null,
+   "vendedor": "Gameplanet",
+   "ultima_lectura_utc": "2026-09-28T19:19:31Z",
+   "precio_actual": 1099999,
    "precio_lista_actual": null,
-   "efectivo_actual": null,
-   "minimo": null,
-   "maximo": null,
-   "lecturas_ok": 0,
+   "efectivo_actual": 1099999,
+   "minimo": {
+    "efectivo": 1099999,
+    "fecha_utc": "2026-09-28T19:19:31Z"
+   },
+   "maximo": {
+    "efectivo": 1099999,
+    "fecha_utc": "2026-09-28T19:19:31Z"
+   },
+   "lecturas_ok": 1,
    "racha_fallos": 0,
-   "serie": []
+   "serie": [
+    [
+     "2026-09-28T19:19:31Z",
+     1099999
+    ]
+   ]
   },
   {
    "id": "gameplanet-mario-kart",
@@ -96,18 +143,29 @@
    "url": "https://gameplanet.com/producto/consola-nintendo-switch-2-con-mario-kart-world-fisico-y-adaptador-de-corriente-nsw2/",
    "valor_extra": 180000,
    "precio_objetivo": 950000,
-   "estado": "sin_datos",
+   "estado": "ok",
    "motivo": "",
-   "vendedor": null,
-   "ultima_lectura_utc": null,
-   "precio_actual": null,
+   "vendedor": "Gameplanet",
+   "ultima_lectura_utc": "2026-09-28T19:19:33Z",
+   "precio_actual": 1199999,
    "precio_lista_actual": null,
-   "efectivo_actual": null,
-   "minimo": null,
-   "maximo": null,
-   "lecturas_ok": 0,
+   "efectivo_actual": 1019999,
+   "minimo": {
+    "efectivo": 1019999,
+    "fecha_utc": "2026-09-28T19:19:33Z"
+   },
+   "maximo": {
+    "efectivo": 1019999,
+    "fecha_utc": "2026-09-28T19:19:33Z"
+   },
+   "lecturas_ok": 1,
    "racha_fallos": 0,
-   "serie": []
+   "serie": [
+    [
+     "2026-09-28T19:19:33Z",
+     1019999
+    ]
+   ]
   },
   {
    "id": "sears-estandar",
@@ -117,18 +175,29 @@
    "url": "https://www.sears.com.mx/producto/3522519/consola-nintendo-switch-2",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "sin_datos",
+   "estado": "ok",
    "motivo": "",
-   "vendedor": null,
-   "ultima_lectura_utc": null,
-   "precio_actual": null,
-   "precio_lista_actual": null,
-   "efectivo_actual": null,
-   "minimo": null,
-   "maximo": null,
-   "lecturas_ok": 0,
+   "vendedor": "SEARS",
+   "ultima_lectura_utc": "2026-09-28T19:19:36Z",
+   "precio_actual": 1399900,
+   "precio_lista_actual": 1399900,
+   "efectivo_actual": 1399900,
+   "minimo": {
+    "efectivo": 1399900,
+    "fecha_utc": "2026-09-28T19:19:36Z"
+   },
+   "maximo": {
+    "efectivo": 1399900,
+    "fecha_utc": "2026-09-28T19:19:36Z"
+   },
+   "lecturas_ok": 1,
    "racha_fallos": 0,
-   "serie": []
+   "serie": [
+    [
+     "2026-09-28T19:19:36Z",
+     1399900
+    ]
+   ]
   },
   {
    "id": "sears-mario-kart",
@@ -138,18 +207,29 @@
    "url": "https://www.sears.com.mx/producto/3522625/consola-nintendo-switch-2-mario-kart-world",
    "valor_extra": 180000,
    "precio_objetivo": 950000,
-   "estado": "sin_datos",
+   "estado": "ok",
    "motivo": "",
-   "vendedor": null,
-   "ultima_lectura_utc": null,
-   "precio_actual": null,
-   "precio_lista_actual": null,
-   "efectivo_actual": null,
-   "minimo": null,
-   "maximo": null,
-   "lecturas_ok": 0,
+   "vendedor": "SEARS",
+   "ultima_lectura_utc": "2026-09-28T19:19:39Z",
+   "precio_actual": 1524900,
+   "precio_lista_actual": 1524900,
+   "efectivo_actual": 1344900,
+   "minimo": {
+    "efectivo": 1344900,
+    "fecha_utc": "2026-09-28T19:19:39Z"
+   },
+   "maximo": {
+    "efectivo": 1344900,
+    "fecha_utc": "2026-09-28T19:19:39Z"
+   },
+   "lecturas_ok": 1,
    "racha_fallos": 0,
-   "serie": []
+   "serie": [
+    [
+     "2026-09-28T19:19:39Z",
+     1344900
+    ]
+   ]
   }
  ]
 }
