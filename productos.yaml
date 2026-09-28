@@ -28,7 +28,7 @@ productos:
     version: nacional
     descripcion: Switch 2 256 GB edición Bundle Sports Resort
     url: https://www.liverpool.com.mx/tienda/pdp/consola-fija-portatil-switch-2-de-256-gb-edicion-bundle-sports-resort/1209428225
-    valor_extra: 0             # PENDIENTE: cuánto vale para ti el juego incluido
+    valor_extra: 1500
 
   - id: walmart-estandar
     tienda: walmart
