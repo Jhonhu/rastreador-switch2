@@ -93,7 +93,11 @@ def _imprimir(resumen: Resumen, config: Configuracion) -> None:
             efectivo = productos[l.producto_id].precio_efectivo(l.precio)
             detalle = f"{formatear_pesos(l.precio)} (efectivo {formatear_pesos(efectivo)}) {l.motivo}".strip()
         print(f"{l.estado.value:13} {l.producto_id:26} {detalle}")
-    print(f"{len(resumen.alertas)} alerta(s)")
+    for h in resumen.hallazgos:
+        print(f"{'nuevo':13} {h.vigilancia.id:26} SKU {h.resultado.id}: {h.resultado.nombre}")
+    for vigilancia_id, motivo in resumen.fallos_vigilancia:
+        print(f"{'vigilancia':13} {vigilancia_id:26} no se pudo revisar: {motivo}")
+    print(f"{len(resumen.alertas)} alerta(s), {len(resumen.hallazgos)} producto(s) nuevo(s)")
 
 
 if __name__ == "__main__":

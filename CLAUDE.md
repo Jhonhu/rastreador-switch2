@@ -42,6 +42,7 @@ Detalle por tienda (dónde vive cada dato): `investigacion/HALLAZGOS.md`.
 - Los extractores se **anclan al id de la URL** (Liverpool mezcla productos recomendados con precio) y lanzan `ErrorExtraccion` en vez de adivinar.
 - `version` admite `sin_declarar` (Gameplanet no lo dice): desviación consciente del pedido original.
 - Dashboard con **SVG propio**, sin librerías: la CSP puede ser `script-src 'self'` sin SRI.
+- **Vigilancias** (`vigilancia.py`): excepción acotada y aprobada por el usuario al "no es un bot de búsquedas". Son consultas fijas en `productos.yaml`, avisan una vez por SKU y guardan su estado en `data/vigilancias.json`. Nació porque Liverpool despublicó el bundle Pokémon (SKU 1186172911); su título no dice "Switch 2", por eso `requiere` usa "256".
 
 ## Seguridad (obligatorio)
 - Secretos solo en variables de entorno / GitHub Secrets / `.env` local (ignorado). Nada de secretos en el repo, los logs ni los mensajes de error.

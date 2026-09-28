@@ -187,8 +187,63 @@ def recortar_liverpool(sopa: BeautifulSoup, sku: str | None) -> str:
     return "<html><head></head><body>\n" + scripts + "</body></html>\n"
 
 
+def recortar_liverpool_busqueda(sopa: BeautifulSoup, _id: str | None) -> str:
+    """Página /tienda?s=...: consolas + hasta 4 tarjetas más (ruido realista), solo title/productId/priceInfo."""
+    def es_tarjeta(d):
+        return isinstance(d.get("productId"), str) and isinstance(d.get("title"), str) and isinstance(d.get("priceInfo"), dict)
+
+    lineas_json = []
+    for linea in flujo_rsc(sopa).split("\n"):
+        i = linea.find(":")
+        if i > 0 and linea[i + 1:i + 2] in "[{":
+            try:
+                lineas_json.append((linea[:i], json.loads(linea[i + 1:])))
+            except ValueError:
+                pass
+    elegidas: set[str] = set()
+    ruido = 0
+    for _, o in lineas_json:
+        pendientes = [o]
+        while pendientes:
+            n = pendientes.pop()
+            if isinstance(n, dict):
+                if es_tarjeta(n) and n["productId"] not in elegidas:
+                    titulo = n["title"].lower()
+                    if titulo.startswith("consola") and "256" in titulo:  # consolas Switch 2
+                        elegidas.add(n["productId"])
+                    elif ruido < 4:
+                        elegidas.add(n["productId"])
+                        ruido += 1
+                pendientes.extend(n.values())
+            elif isinstance(n, list):
+                pendientes.extend(n)
+
+    def es_elegida(d):
+        return es_tarjeta(d) and d["productId"] in elegidas
+
+    def limpiar(d):
+        if isinstance(d, dict):
+            if es_elegida(d):
+                return elegir(d, ["productId", "title", "priceInfo"])
+            return {k: limpiar(v) for k, v in d.items()}
+        if isinstance(d, list):
+            return [limpiar(v) for v in d]
+        return d
+
+    lineas = []
+    for lid, o in lineas_json:
+        if (podado := podar_hasta(o, es_elegida)):
+            lineas.append(f"{lid}:{json.dumps(limpiar(podado), ensure_ascii=False, separators=(',', ':'))}")
+    if not lineas:
+        raise SystemExit("no encontré tarjetas de producto")
+    texto = "\n".join(lineas) + "\n"
+    scripts = "".join(f"<script>self.__next_f.push({json.dumps([1, texto], ensure_ascii=False)})</script>\n")
+    return "<html><head></head><body>\n" + scripts + "</body></html>\n"
+
+
 RECORTADORES = {
     "liverpool": recortar_liverpool,
+    "liverpool-busqueda": recortar_liverpool_busqueda,
     "walmart": recortar_walmart,
     "gameplanet": recortar_gameplanet,
     "sears": recortar_sears,

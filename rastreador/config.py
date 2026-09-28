@@ -13,11 +13,12 @@ from urllib.parse import urlsplit
 import yaml
 
 from .dinero import a_centavos
-from .modelos import Ajustes, Configuracion, Producto, Version
+from .modelos import Ajustes, Configuracion, Producto, Version, Vigilancia
 from .tiendas import TIENDAS
 
 PATRON_ID = re.compile(r"[a-z0-9][a-z0-9-]{0,49}")
-CLAVES_RAIZ = {"ajustes", "productos"}
+CLAVES_RAIZ = {"ajustes", "productos", "vigilancias"}
+CLAVES_VIGILANCIA = {"id", "tienda", "busqueda", "requiere"}
 CLAVES_AJUSTES = {"lecturas_minimas", "precio_min_valido", "precio_max_valido", "precio_objetivo", "baja_minima_alerta"}
 CLAVES_PRODUCTO = {
     "id", "tienda", "url", "version", "descripcion",
@@ -48,9 +49,10 @@ def interpretar_configuracion(texto: str) -> Configuracion:
 
     ajustes = _validar_ajustes(crudo.get("ajustes"), errores)
     productos = _validar_productos(crudo.get("productos"), errores)
+    vigilancias = _validar_vigilancias(crudo.get("vigilancias", []), errores)
     if errores:
         raise ErrorConfiguracion(errores)
-    return Configuracion(ajustes=ajustes, productos=tuple(productos))
+    return Configuracion(ajustes=ajustes, productos=tuple(productos), vigilancias=tuple(vigilancias))
 
 
 # ------------------------------------------------------------------ ajustes
@@ -125,6 +127,43 @@ def _validar_producto(crudo: Any, indice: int, errores: list[str]) -> Producto |
         id=id_, tienda=tienda, url=url, version=Version(version), descripcion=descripcion.strip(),
         valor_extra=valor_extra, precio_objetivo=objetivo, permitir_terceros=terceros,
     )
+
+
+# ------------------------------------------------------------------ vigilancias
+def _validar_vigilancias(crudo: Any, errores: list[str]) -> list[Vigilancia]:
+    if not isinstance(crudo, list):
+        errores.append("'vigilancias' debe ser una lista")
+        return []
+    vigilancias = [v for i, item in enumerate(crudo) if (v := _validar_vigilancia(item, i, errores))]
+    _sin_repetidos([v.id for v in vigilancias], "id de vigilancia", errores)
+    return vigilancias
+
+
+def _validar_vigilancia(crudo: Any, indice: int, errores: list[str]) -> Vigilancia | None:
+    donde = f"vigilancias[{indice}]"
+    if not isinstance(crudo, dict):
+        errores.append(f"{donde} debe ser un mapa")
+        return None
+    donde = f"{donde} ({crudo.get('id', 'sin id')})"
+    antes = len(errores)
+    _claves_desconocidas(crudo, CLAVES_VIGILANCIA, donde, errores)
+    id_ = crudo.get("id")
+    if not isinstance(id_, str) or not PATRON_ID.fullmatch(id_):
+        errores.append(f"{donde}: id debe ser minúsculas, dígitos y guiones (máx. 50)")
+    tienda = crudo.get("tienda")
+    if tienda not in TIENDAS or TIENDAS[tienda].url_busqueda is None:
+        con_buscador = sorted(n for n, t in TIENDAS.items() if t.url_busqueda)
+        errores.append(f"{donde}: la tienda {tienda!r} no admite vigilancias; admiten: {', '.join(con_buscador)}")
+    busqueda = crudo.get("busqueda")
+    if not isinstance(busqueda, str) or not busqueda.strip() or len(busqueda) > 100:
+        errores.append(f"{donde}: busqueda es obligatoria (máx. 100 caracteres)")
+    requiere = crudo.get("requiere")
+    if (not isinstance(requiere, list) or not requiere
+            or not all(isinstance(p, str) and p.strip() for p in requiere)):
+        errores.append(f"{donde}: requiere debe ser una lista de palabras que el nombre debe contener")
+    if len(errores) > antes:
+        return None
+    return Vigilancia(id=id_, tienda=tienda, busqueda=busqueda.strip(), requiere=tuple(p.strip() for p in requiere))
 
 
 def errores_de_url(url: str, tienda: str) -> list[str]:

@@ -43,6 +43,15 @@ aquí no se evaden bloqueos. Los detalles están en
     él viniendo de arriba. Si al día siguiente sigue abajo, no se repite. Un día
     agotado o con error no cuenta como "haber subido".
 
+- **Vigilancias** (sección `vigilancias` de `productos.yaml`): una búsqueda
+  **fija** en la tienda que corre en cada ejecución diaria y avisa **una sola vez
+  por SKU** cuando aparece un producto cuyo nombre tiene todas las palabras de
+  `requiere` (sin distinguir acentos ni mayúsculas). Sirve para enterarse de que
+  un bundle despublicado volvió, quizá con otro SKU. Los SKU ya avisados quedan
+  en `data/vigilancias.json`: bórralos de ahí si quieres que se avise de nuevo.
+  Hoy solo Liverpool admite vigilancias. Una búsqueda fallida se reporta en la
+  salida, pero no cuenta para "todas las lecturas fallaron".
+
 ---
 
 ## 1. Entorno local (Windows)

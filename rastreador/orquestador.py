@@ -15,6 +15,8 @@ from .descarga import ErrorDescarga, Respuesta
 from .historial import agregar_lecturas, leer_lecturas
 from .modelos import Configuracion, Estado, Lectura
 from .notificador import ErrorNotificacion, Notificador
+from .tiendas import TIENDAS
+from .vigilancia import Hallazgo, cargar_vistos, guardar_vistos, marcar_vistos, redactar_hallazgos, revisar
 
 ESTADOS_FALLIDOS = {Estado.ERROR, Estado.BLOQUEADO, Estado.NO_ENCONTRADO}
 PAUSA_ENTRE_DESCARGAS = 2.0  # segundos: cortesía con las tiendas
@@ -33,6 +35,8 @@ class Resumen:
     lecturas: tuple[Lectura, ...]
     alertas: tuple[Alerta, ...]
     fallo_notificacion: str | None = None  # el dato quedó guardado, pero el aviso no salió
+    hallazgos: tuple[Hallazgo, ...] = ()  # productos nuevos encontrados por las vigilancias
+    fallos_vigilancia: tuple[tuple[str, str], ...] = ()  # (vigilancia_id, motivo); no cuentan como lecturas
 
     @property
     def todas_fallaron(self) -> bool:
@@ -47,13 +51,41 @@ def ejecutar(config: Configuracion, ruta_historial: Path, deps: Dependencias) ->
 
     productos = {p.id: p for p in config.productos}
     alertas = tuple(a for l in nuevas for a in evaluar(productos[l.producto_id], config.ajustes, previas, l))
+    hallazgos, fallos_vigilancia = _revisar_vigilancias(config, ruta_historial.parent / "vigilancias.json", deps)
+
     fallo = None
-    if alertas:
+    partes = ([redactar_mensaje(alertas)] if alertas else []) + ([redactar_hallazgos(hallazgos)] if hallazgos else [])
+    if partes:
         try:
-            deps.notificador.enviar(redactar_mensaje(alertas))
+            deps.notificador.enviar("\n\n".join(partes))
         except ErrorNotificacion as exc:
             fallo = str(exc)  # ya viene sin token (ver notificador.py)
-    return Resumen(lecturas=tuple(nuevas), alertas=alertas, fallo_notificacion=fallo)
+    return Resumen(lecturas=tuple(nuevas), alertas=alertas, fallo_notificacion=fallo,
+                   hallazgos=hallazgos, fallos_vigilancia=fallos_vigilancia)
+
+
+def _revisar_vigilancias(config: Configuracion, ruta_vistos: Path, deps: Dependencias):
+    """Corre cada búsqueda fija y guarda los SKU nuevos ANTES de avisar (igual que el historial)."""
+    if not config.vigilancias:
+        return (), ()
+    vistos = cargar_vistos(ruta_vistos)
+    hallazgos: list[Hallazgo] = []
+    fallos: list[tuple[str, str]] = []
+    for vigilancia in config.vigilancias:
+        deps.pausa(PAUSA_ENTRE_DESCARGAS)
+        url = TIENDAS[vigilancia.tienda].url_busqueda(vigilancia.busqueda)
+        try:
+            resultado: Respuesta | ErrorDescarga = deps.descargar(url)
+        except ErrorDescarga as exc:
+            resultado = exc
+        revision = revisar(vigilancia, resultado, set(vistos.get(vigilancia.id, {})))
+        if revision.fallo:
+            fallos.append((vigilancia.id, revision.fallo))
+        hallazgos.extend(revision.hallazgos)
+        marcar_vistos(vistos, revision.hallazgos, deps.reloj())
+    if hallazgos or not ruta_vistos.exists():
+        guardar_vistos(ruta_vistos, vistos)
+    return tuple(hallazgos), tuple(fallos)
 
 
 def _leer_productos(config: Configuracion, deps: Dependencias) -> list[Lectura]:

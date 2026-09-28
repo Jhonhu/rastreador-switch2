@@ -61,3 +61,13 @@ productos:
     descripcion: Switch 2 + Mario Kart World (vendido por Sears)
     url: https://www.sears.com.mx/producto/3522625/consola-nintendo-switch-2-mario-kart-world
     valor_extra: 1800
+
+# Búsquedas fijas para enterarse de productos NUEVOS: avisa UNA vez por SKU
+# (los ya avisados quedan en data/vigilancias.json). Solo tiendas con buscador investigado.
+vigilancias:
+  - id: liverpool-bundle-pokemon
+    tienda: liverpool
+    busqueda: consola nintendo switch 2
+    # Liverpool tituló el bundle "Consola ... switch de 256 gb Nintendo pokémon" (sin "2"):
+    # "256" separa la Switch 2 de las Switch 1 (máx. 64 GB). Sin acentos ni mayúsculas.
+    requiere: [consola, pokemon, "256"]

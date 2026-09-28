@@ -51,9 +51,27 @@ class Ajustes:
 
 
 @dataclass(frozen=True, slots=True)
+class Vigilancia:
+    """Una búsqueda fija en una tienda para enterarse de productos NUEVOS (p. ej. un bundle que reaparece)."""
+
+    id: str
+    tienda: str
+    busqueda: str
+    requiere: tuple[str, ...]  # palabras que debe tener el nombre (sin acentos, minúsculas)
+
+
+@dataclass(frozen=True, slots=True)
+class ResultadoBusqueda:
+    id: str  # SKU de la tienda
+    nombre: str
+    precio: int | None  # centavos
+
+
+@dataclass(frozen=True, slots=True)
 class Configuracion:
     ajustes: Ajustes
     productos: tuple[Producto, ...]
+    vigilancias: tuple[Vigilancia, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)

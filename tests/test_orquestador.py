@@ -11,7 +11,7 @@ import pytest
 from rastreador.alertas import TipoAlerta
 from rastreador.descarga import ErrorDescarga, Respuesta
 from rastreador.historial import leer_lecturas
-from rastreador.modelos import Ajustes, Configuracion, Estado
+from rastreador.modelos import Ajustes, Configuracion, Estado, Vigilancia
 from rastreador.notificador import ErrorNotificacion
 from rastreador.orquestador import PAUSA_ENTRE_DESCARGAS, Dependencias, ejecutar
 
@@ -142,3 +142,42 @@ def test_un_error_inesperado_del_notificador_no_se_disfraza(tmp_path):
     )
     with pytest.raises(RuntimeError):
         ejecutar(CONFIG, tmp_path / "lecturas.csv", deps)
+
+
+# ------------------------------------------------------------------ vigilancias
+POKEMON = Vigilancia(id="liverpool-bundle-pokemon", tienda="liverpool",
+                     busqueda="consola nintendo switch 2", requiere=("consola", "pokemon", "256"))
+URL_BUSQUEDA = "https://www.liverpool.com.mx/tienda?s=consola+nintendo+switch+2"
+CONFIG_VIGILADA = Configuracion(ajustes=CONFIG.ajustes, productos=(WALMART,), vigilancias=(POKEMON,))
+
+
+def test_la_vigilancia_avisa_una_sola_vez_cuando_reaparece(tmp_path):
+    ruta = tmp_path / "data" / "lecturas.csv"
+    sin_pokemon = Respuesta(200, URL_BUSQUEDA, leer_fixture("liverpool_busqueda").replace("pokémon", "genérica"))
+    con_pokemon = Respuesta(200, URL_BUSQUEDA, leer_fixture("liverpool_busqueda"))
+    notificador, resultados = NotificadorEspia(), []
+    for dia, pagina_busqueda in enumerate([sin_pokemon, con_pokemon, con_pokemon,
+                                           Respuesta(403, URL_BUSQUEDA, "Access Denied")]):
+        mundo_del_dia = {WALMART.url: pagina_walmart(10790), URL_BUSQUEDA: pagina_busqueda}
+        deps = Dependencias(descargar=lambda url, m=mundo_del_dia: m[url], reloj=lambda d=dia: FECHA + timedelta(days=d),
+                            pausa=lambda s: None, notificador=notificador)
+        resultados.append(ejecutar(CONFIG_VIGILADA, ruta, deps))
+
+    assert [len(r.hallazgos) for r in resultados] == [0, 1, 0, 0]
+    assert resultados[3].fallos_vigilancia == (("liverpool-bundle-pokemon", "HTTP 403"),)
+    assert not resultados[3].todas_fallaron  # una búsqueda fallida no es una lectura fallida
+    assert len(notificador.mensajes) == 1
+    assert "Apareció en Liverpool" in notificador.mensajes[0] and "1186172911" in notificador.mensajes[0]
+    assert '"1186172911"' in (tmp_path / "data" / "vigilancias.json").read_text(encoding="utf-8")
+    assert len(leer_lecturas(ruta)) == 4  # las lecturas de productos siguen su curso
+
+
+def test_alerta_de_precio_y_hallazgo_van_en_un_solo_mensaje(tmp_path):
+    notificador = NotificadorEspia()
+    mundo_del_dia = {WALMART.url: pagina_walmart(9000),
+                     URL_BUSQUEDA: Respuesta(200, URL_BUSQUEDA, leer_fixture("liverpool_busqueda"))}
+    deps = Dependencias(descargar=mundo_del_dia.__getitem__, reloj=lambda: FECHA, pausa=lambda s: None,
+                        notificador=notificador)
+    resumen = ejecutar(CONFIG_VIGILADA, tmp_path / "lecturas.csv", deps)
+    assert (len(resumen.alertas), len(resumen.hallazgos), len(notificador.mensajes)) == (1, 1, 1)
+    assert "Bajó del objetivo" in notificador.mensajes[0] and "Apareció en Liverpool" in notificador.mensajes[0]

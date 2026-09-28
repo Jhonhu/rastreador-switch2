@@ -18,7 +18,7 @@ from .lectores import (
     next_data,
     ruta,
 )
-from .modelos import Extraccion
+from .modelos import Extraccion, ResultadoBusqueda
 
 # Valores de schema.org/availability que significan "se puede comprar".
 DISPONIBLE_SCHEMA = {"InStock", "LimitedAvailability", "OnlineOnly", "PreOrder", "PreSale"}
@@ -109,6 +109,27 @@ def extraer_liverpool(html: str, url: str) -> Extraccion:
         vendedor=None if marketplace else "Liverpool",
         vendedor_oficial=not marketplace,
     )
+
+
+def extraer_resultados_liverpool(html: str) -> list[ResultadoBusqueda]:
+    """Tarjetas de la página de búsqueda (/tienda?s=...): mismo stream RSC, sin duplicados."""
+    def es_tarjeta(nodo: dict) -> bool:
+        return isinstance(nodo.get("productId"), str) and isinstance(nodo.get("title"), str) and isinstance(nodo.get("priceInfo"), dict)
+
+    resultados: dict[str, ResultadoBusqueda] = {}
+    for valor in flujo_rsc(analizar_html(html)):
+        for tarjeta in buscar_dicts(valor, es_tarjeta):
+            if tarjeta["productId"] in resultados:
+                continue
+            precios = tarjeta["priceInfo"]
+            promo = precios.get("promoPrice")
+            bruto = _primero(promo.get("price") if isinstance(promo, dict) else promo, precios.get("salePrice"))
+            try:
+                precio = _importe_opcional(bruto, "precio")
+            except ErrorExtraccion:
+                precio = None  # un precio raro en una tarjeta no invalida la búsqueda
+            resultados[tarjeta["productId"]] = ResultadoBusqueda(tarjeta["productId"], tarjeta["title"], precio)
+    return list(resultados.values())
 
 
 # ------------------------------------------------------------------ Walmart

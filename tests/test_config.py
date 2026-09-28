@@ -133,3 +133,35 @@ def test_safe_load_realmente_rechaza_la_etiqueta():
     # Sanidad de la prueba anterior: el error viene de safe_load, no de otra cosa.
     with pytest.raises(yaml.constructor.ConstructorError):
         yaml.safe_load('!!python/object/apply:os.system ["echo"]')
+
+
+VIGILANCIA_VALIDA = """
+vigilancias:
+  - id: liverpool-bundle-pokemon
+    tienda: liverpool
+    busqueda: consola nintendo switch 2
+    requiere: [consola, pokemon, "256"]
+"""
+
+
+def test_vigilancia_valida():
+    config = interpretar_configuracion(config_con(PRODUCTO_VALIDO) + VIGILANCIA_VALIDA)
+    (v,) = config.vigilancias
+    assert (v.id, v.tienda, v.busqueda, v.requiere) == (
+        "liverpool-bundle-pokemon", "liverpool", "consola nintendo switch 2", ("consola", "pokemon", "256"))
+
+
+def test_sin_vigilancias_es_valido():
+    assert interpretar_configuracion(config_con(PRODUCTO_VALIDO)).vigilancias == ()
+
+
+@pytest.mark.parametrize(("cambio", "fragmento"), [
+    (("tienda: liverpool", "tienda: walmart"), "no admite vigilancias"),
+    (('requiere: [consola, pokemon, "256"]', "requiere: []"), "requiere"),
+    (('requiere: [consola, pokemon, "256"]', "requiere: consola"), "requiere"),
+    (("busqueda: consola nintendo switch 2", "busqueda: ''"), "busqueda"),
+    (("    busqueda:", "    buscar: x\n    busqueda:"), "clave desconocida 'buscar'"),
+])
+def test_valida_las_vigilancias(cambio, fragmento):
+    errores = errores_de(config_con(PRODUCTO_VALIDO) + VIGILANCIA_VALIDA.replace(*cambio))
+    assert any(fragmento in e for e in errores), errores
