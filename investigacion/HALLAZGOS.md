@@ -1,7 +1,7 @@
 # Hallazgos de la Fase 1 (2026-09-28)
 
 Sondeo con User-Agent honesto desde IP residencial (`investigacion/sondeo.py`).
-**Pendiente:** repetir desde GitHub Actions (IPs de datacenter).
+**Desde GitHub Actions (2026-09-28, `sondeo.yml`):** Liverpool, Gameplanet y Sears responden igual que desde casa. **Walmart bloquea** las IPs de Actions (PerimeterX: 302 a `/blocked?url=...` con HTTP 200). Coppel sigue bloqueada.
 
 | Tienda | Fuente del precio | Ruta exacta | Disponibilidad | Vendedor |
 |---|---|---|---|---|

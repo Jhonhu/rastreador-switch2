@@ -62,6 +62,6 @@ Detalle por tienda (dónde vive cada dato): `investigacion/HALLAZGOS.md`.
 - En este entorno, un heredoc de Bash puede alterar `\\` y `\r\n` dentro del código: para archivos con barras invertidas usa la herramienta Write.
 
 ## Pendientes conocidos
-- Correr `sondeo.yml` en Actions para saber si las tiendas bloquean IPs de datacenter.
+- Walmart bloquea IPs de GitHub Actions (PerimeterX, sondeo del 2026-09-28): falta que el usuario decida qué hacer con ella.
 - Verificar un caso real de Liverpool agotado y de Liverpool marketplace.
 - Fuera de alcance por ahora: promociones bancarias, Amazon (se usa Keepa), Google Shopping.

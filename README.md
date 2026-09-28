@@ -195,9 +195,10 @@ tests/                    pytest; fixtures reales recortados en tests/fixtures
 
 ## Límites honestos
 
-- **No se ha probado desde GitHub Actions.** Todo se verificó desde una IP
-  residencial. Las tiendas con protección anti-bot (Liverpool usa Akamai) pueden
-  bloquear las IPs de datacenter. El workflow de sondeo existe para averiguarlo.
+- **Walmart bloquea a GitHub Actions** (PerimeterX, comprobado con el sondeo del
+  2026-09-28): desde Actions sus lecturas quedan como `bloqueado`. Liverpool,
+  Gameplanet y Sears sí responden. Una tienda puede empezar a bloquear en
+  cualquier momento; el sondeo manual sirve para revisarlo.
 - **Una lectura al día.** Una oferta relámpago de pocas horas puede pasar sin
   que la veas.
 - **El cron de GitHub no es puntual:** puede retrasarse desde minutos hasta

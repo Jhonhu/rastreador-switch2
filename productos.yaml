@@ -23,6 +23,13 @@ productos:
     url: https://www.liverpool.com.mx/tienda/pdp/consola-nintendo-switch-2-de-256-gb-edici%C3%B3n-bundle-pok%C3%A9mon/1186172911
     valor_extra: 1500          # lo que vale para ti el juego incluido
 
+  - id: liverpool-bundle-sports
+    tienda: liverpool
+    version: nacional
+    descripcion: Switch 2 256 GB edición Bundle Sports Resort
+    url: https://www.liverpool.com.mx/tienda/pdp/consola-fija-portatil-switch-2-de-256-gb-edicion-bundle-sports-resort/1209428225
+    valor_extra: 0             # PENDIENTE: cuánto vale para ti el juego incluido
+
   - id: walmart-estandar
     tienda: walmart
     version: nacional          # EAN 045496885816, el mismo que Sears

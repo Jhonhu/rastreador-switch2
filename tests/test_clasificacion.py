@@ -58,6 +58,22 @@ def test_redireccion_a_la_portada_es_bloqueo(ajustes):
     assert lectura.motivo == "redirigido a la portada"
 
 
+def test_redireccion_a_pagina_de_bloqueo_es_bloqueo(ajustes):
+    """Así respondía Walmart a GitHub Actions: 302 a /blocked?url=... con HTTP 200 (PerimeterX)."""
+    final = "https://www.walmart.com.mx/blocked?url=L2lwL2NvbnNvbGE&uuid=366bd213&vid=&g=b"
+    r = Respuesta(200, final, "<html><title>Robot or human?</title></html>")
+    lectura = clasificar(hacer_producto(), ajustes, r, FECHA)
+    assert lectura.estado is Estado.BLOQUEADO
+    assert lectura.motivo == "redirigido fuera de la página de producto (/blocked)"
+
+
+def test_redireccion_a_otra_pagina_de_producto_se_sigue_extrayendo(ajustes):
+    """Un cambio de slug (misma forma de URL) no es bloqueo: el extractor verifica el id."""
+    otra = URLS["walmart_vende_walmart"].replace("consola-nintendo-switch-2-256-gb", "slug-nuevo")
+    lectura = clasificar(hacer_producto(), ajustes, respuesta("walmart_vende_walmart", url_final=otra), FECHA)
+    assert lectura.estado is Estado.OK
+
+
 def test_redireccion_fuera_de_la_tienda_es_error(ajustes):
     r = respuesta("walmart_vende_walmart", url_final="https://captcha.ejemplo.com/reto")
     lectura = clasificar(hacer_producto(), ajustes, r, FECHA)

@@ -41,6 +41,8 @@ def clasificar(
         return lectura(Estado.ERROR, f"redirigido fuera de la tienda ({destino.hostname})")
     if destino.path in ("", "/"):  # así bloquea Coppel: 302 a la portada
         return lectura(Estado.BLOQUEADO, "redirigido a la portada")
+    if not tienda.patron_ruta.fullmatch(destino.path):  # así bloquea Walmart: 302 a /blocked?...
+        return lectura(Estado.BLOQUEADO, f"redirigido fuera de la página de producto ({destino.path[:60]})")
 
     try:
         extraccion = tienda.extraer(resultado.texto, producto.url)
