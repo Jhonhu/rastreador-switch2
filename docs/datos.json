@@ -1,6 +1,6 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-09-29T14:54:15Z",
+ "generado_utc": "2026-09-29T23:48:06Z",
  "precio_objetivo": 950000,
  "mejor": {
   "producto_id": "gameplanet-mario-kart",
@@ -18,7 +18,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-09-29T14:53:53Z",
+   "ultima_lectura_utc": "2026-09-29T23:47:44Z",
    "precio_actual": 1287908,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1287908,
@@ -28,9 +28,9 @@
    },
    "maximo": {
     "efectivo": 1287908,
-    "fecha_utc": "2026-09-29T14:53:53Z"
+    "fecha_utc": "2026-09-29T23:47:44Z"
    },
-   "lecturas_ok": 3,
+   "lecturas_ok": 4,
    "racha_fallos": 0,
    "serie": [
     [
@@ -43,6 +43,10 @@
     ],
     [
      "2026-09-29T14:53:53Z",
+     1287908
+    ],
+    [
+     "2026-09-29T23:47:44Z",
      1287908
     ]
    ]
@@ -58,7 +62,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-09-29T14:53:55Z",
+   "ultima_lectura_utc": "2026-09-29T23:47:47Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -71,7 +75,7 @@
     "fecha_utc": "2026-09-28T19:19:22Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 2,
+   "racha_fallos": 3,
    "serie": [
     [
      "2026-09-28T19:19:22Z",
@@ -90,7 +94,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-09-29T14:53:59Z",
+   "ultima_lectura_utc": "2026-09-29T23:47:50Z",
    "precio_actual": 1352308,
    "precio_lista_actual": 1469900,
    "efectivo_actual": 1202308,
@@ -100,9 +104,9 @@
    },
    "maximo": {
     "efectivo": 1202308,
-    "fecha_utc": "2026-09-29T14:53:59Z"
+    "fecha_utc": "2026-09-29T23:47:50Z"
    },
-   "lecturas_ok": 2,
+   "lecturas_ok": 3,
    "racha_fallos": 0,
    "serie": [
     [
@@ -111,6 +115,10 @@
     ],
     [
      "2026-09-29T14:53:59Z",
+     1202308
+    ],
+    [
+     "2026-09-29T23:47:50Z",
      1202308
     ]
    ]
@@ -126,7 +134,7 @@
    "estado": "tercero",
    "motivo": "vendido por TECH4U",
    "vendedor": "TECH4U",
-   "ultima_lectura_utc": "2026-09-29T14:54:02Z",
+   "ultima_lectura_utc": "2026-09-29T23:47:53Z",
    "precio_actual": 947900,
    "precio_lista_actual": 1029900,
    "efectivo_actual": 947900,
@@ -158,7 +166,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-09-29T14:54:04Z",
+   "ultima_lectura_utc": "2026-09-29T23:47:55Z",
    "precio_actual": 1099999,
    "precio_lista_actual": null,
    "efectivo_actual": 1099999,
@@ -168,9 +176,9 @@
    },
    "maximo": {
     "efectivo": 1099999,
-    "fecha_utc": "2026-09-29T14:54:04Z"
+    "fecha_utc": "2026-09-29T23:47:55Z"
    },
-   "lecturas_ok": 3,
+   "lecturas_ok": 4,
    "racha_fallos": 0,
    "serie": [
     [
@@ -183,6 +191,10 @@
     ],
     [
      "2026-09-29T14:54:04Z",
+     1099999
+    ],
+    [
+     "2026-09-29T23:47:55Z",
      1099999
     ]
    ]
@@ -198,7 +210,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-09-29T14:54:06Z",
+   "ultima_lectura_utc": "2026-09-29T23:47:57Z",
    "precio_actual": 1199999,
    "precio_lista_actual": null,
    "efectivo_actual": 1019999,
@@ -208,9 +220,9 @@
    },
    "maximo": {
     "efectivo": 1019999,
-    "fecha_utc": "2026-09-29T14:54:06Z"
+    "fecha_utc": "2026-09-29T23:47:57Z"
    },
-   "lecturas_ok": 3,
+   "lecturas_ok": 4,
    "racha_fallos": 0,
    "serie": [
     [
@@ -223,6 +235,10 @@
     ],
     [
      "2026-09-29T14:54:06Z",
+     1019999
+    ],
+    [
+     "2026-09-29T23:47:57Z",
      1019999
     ]
    ]
@@ -238,19 +254,19 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-09-29T14:54:09Z",
-   "precio_actual": 1399900,
+   "ultima_lectura_utc": "2026-09-29T23:48:01Z",
+   "precio_actual": 1279900,
    "precio_lista_actual": 1399900,
-   "efectivo_actual": 1399900,
+   "efectivo_actual": 1279900,
    "minimo": {
-    "efectivo": 1399900,
-    "fecha_utc": "2026-09-28T19:19:36Z"
+    "efectivo": 1279900,
+    "fecha_utc": "2026-09-29T23:48:01Z"
    },
    "maximo": {
     "efectivo": 1399900,
     "fecha_utc": "2026-09-29T14:54:09Z"
    },
-   "lecturas_ok": 3,
+   "lecturas_ok": 4,
    "racha_fallos": 0,
    "serie": [
     [
@@ -264,6 +280,10 @@
     [
      "2026-09-29T14:54:09Z",
      1399900
+    ],
+    [
+     "2026-09-29T23:48:01Z",
+     1279900
     ]
    ]
   },
@@ -278,19 +298,19 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-09-29T14:54:11Z",
-   "precio_actual": 1524900,
+   "ultima_lectura_utc": "2026-09-29T23:48:03Z",
+   "precio_actual": 1399900,
    "precio_lista_actual": 1524900,
-   "efectivo_actual": 1344900,
+   "efectivo_actual": 1219900,
    "minimo": {
-    "efectivo": 1344900,
-    "fecha_utc": "2026-09-28T19:19:39Z"
+    "efectivo": 1219900,
+    "fecha_utc": "2026-09-29T23:48:03Z"
    },
    "maximo": {
     "efectivo": 1344900,
     "fecha_utc": "2026-09-29T14:54:11Z"
    },
-   "lecturas_ok": 3,
+   "lecturas_ok": 4,
    "racha_fallos": 0,
    "serie": [
     [
@@ -304,6 +324,10 @@
     [
      "2026-09-29T14:54:11Z",
      1344900
+    ],
+    [
+     "2026-09-29T23:48:03Z",
+     1219900
     ]
    ]
   }
