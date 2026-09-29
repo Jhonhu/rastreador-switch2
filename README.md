@@ -4,7 +4,7 @@ Te dice **cuándo** una Switch 2 está a un precio realmente bueno, según el
 **historial real** de precios y no según el "% de descuento" que anuncian las
 tiendas (que suelen inflar el precio "anterior").
 
-Dos veces al día (08:23 y 20:23, hora de CDMX), GitHub Actions lee cada producto de `productos.yaml` y:
+Cuatro veces al día (02:23, 08:23, 14:23 y 20:23, hora de CDMX), GitHub Actions lee cada producto de `productos.yaml` y:
 
 1. agrega la lectura al historial `data/lecturas.csv` (también las fallidas, con su motivo);
 2. regenera el dashboard estático en GitHub Pages (`docs/`);
@@ -151,7 +151,7 @@ En uno o dos minutos el dashboard queda en
 2. **Rastreo.** En **Actions → "Rastreo diario" → Run workflow**. Al terminar
    debe haber un commit `datos: lecturas del AAAA-MM-DD` del bot, y el dashboard
    se actualiza.
-3. Desde ahí corre solo **dos veces al día: 08:23 y 20:23 (hora de CDMX)**.
+3. Desde ahí corre solo **cada 6 horas: 02:23, 08:23, 14:23 y 20:23 (hora de CDMX)**.
 
 Los workflows piden permisos explícitos: solo "Rastreo diario" puede escribir
 (`contents: write`) para commitear los datos. No hace falta cambiar los permisos
@@ -208,7 +208,7 @@ tests/                    pytest; fixtures reales recortados en tests/fixtures
   2026-09-28): desde Actions sus lecturas quedan como `bloqueado`. Liverpool,
   Gameplanet y Sears sí responden. Una tienda puede empezar a bloquear en
   cualquier momento; el sondeo manual sirve para revisarlo.
-- **Dos lecturas al día (08:23 y 20:23).** Una oferta relámpago de pocas horas puede pasar sin
+- **Una lectura cada 6 horas.** Una oferta relámpago de pocas horas puede pasar sin
   que la veas.
 - **El cron de GitHub no es puntual:** puede retrasarse desde minutos hasta
   horas, o saltarse una ejecución en horas de carga.

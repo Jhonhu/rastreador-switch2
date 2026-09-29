@@ -2,10 +2,10 @@ name: Rastreo diario
 
 on:
   schedule:
-    # Dos lecturas al día (Ciudad de México = UTC-6 todo el año; sin horario de verano desde 2022):
-    #   14:23 UTC = 08:23 CDMX   y   02:23 UTC = 20:23 CDMX (del día anterior en CDMX).
+    # Cada 6 horas (Ciudad de México = UTC-6 todo el año; sin horario de verano desde 2022):
+    #   02:23 UTC = 20:23, 08:23 UTC = 02:23, 14:23 UTC = 08:23 y 20:23 UTC = 14:23 CDMX.
     # Minuto no redondo a propósito: a las :00 GitHub tiene picos de carga y retrasa o salta crons.
-    - cron: "23 2,14 * * *"
+    - cron: "23 2,8,14,20 * * *"
   workflow_dispatch: {}  # botón "Run workflow" en la pestaña Actions
 
 permissions: {}  # nada por omisión; el job pide solo lo que usa
