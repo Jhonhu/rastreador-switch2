@@ -31,6 +31,16 @@ Regenerar fixtures: ver el docstring de `investigacion/recortar_fixtures.py`.
 - **Web** (`listado.mercadolibre.com.mx`): redirige a `/gz/account-verification`
   (anti-bot) incluso desde IP residencial. No se evade.
 
+## Bodega Aurrera: descartada (2026-09-28)
+- Es la plataforma de Walmart México: URL `/ip/<slug>/<EAN>`, JSON-LD `offers.price`
+  y `availability`, `sellerType` (INTERNAL/EXTERNAL) en `__NEXT_DATA__`. El
+  extractor de Walmart serviría casi igual.
+- **Desde IP residencial** responde 200 con datos: la estándar (EAN 045496885816,
+  el mismo que Walmart y Sears) a $9,998.99, vendida por Bodega Aurrera.
+- **Desde GitHub Actions** (sondeo, run 36512891171): 307 a `/blocked`,
+  "Verify Your Identity", marcador PerimeterX, sin datos. Igual que Walmart.
+  No se evade; se descarta.
+
 ## Amazon: fuera de alcance
 Bloquea IPs de datacenter y sus términos prohíben el scraping; la API de afiliados
 exige ventas. Se usa Keepa (historial y alertas propias) fuera de este proyecto.
