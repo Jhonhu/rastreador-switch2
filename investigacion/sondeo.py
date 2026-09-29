@@ -49,6 +49,9 @@ URLS: dict[str, list[str]] = {
         "https://www.sears.com.mx/producto/3522519/consola-nintendo-switch-2",
         "https://www.sears.com.mx/producto/3522625/consola-nintendo-switch-2-mario-kart-world",
     ],
+    "bodega-aurrera": [
+        "https://www.bodegaaurrera.com.mx/ip/nintendo/consola-nintendo-switch-2-256-gb/00004549688581",
+    ],
 }
 
 # Señales de dónde podría vivir el precio.
