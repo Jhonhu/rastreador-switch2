@@ -10,7 +10,7 @@ PyYAML==6.0.3             # leer productos.yaml, SIEMPRE con yaml.safe_load
 
 # --- Transitivas (las arrastran las directas; fijadas para reproducibilidad)
 certifi==2026.7.22        # requests: certificados raíz para HTTPS
-charset-normalizer==3.5.1 # requests
+charset-normalizer==3.5.2 # requests
 idna==3.20                # requests
 urllib3==2.8.0            # requests
 soupsieve==2.10           # beautifulsoup4
