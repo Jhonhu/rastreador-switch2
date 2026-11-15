@@ -1,10 +1,10 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-11-15T09:37:19Z",
+ "generado_utc": "2026-11-15T19:51:05Z",
  "precio_objetivo": 950000,
  "mejor": {
-  "producto_id": "gameplanet-mario-kart",
-  "efectivo": 1019999
+  "producto_id": "liverpool-bundle-sports",
+  "efectivo": 996522
  },
  "productos": [
   {
@@ -18,7 +18,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-15T09:36:59Z",
+   "ultima_lectura_utc": "2026-11-15T19:50:41Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -31,7 +31,7 @@
     "fecha_utc": "2026-10-05T09:14:40Z"
    },
    "lecturas_ok": 132,
-   "racha_fallos": 1,
+   "racha_fallos": 2,
    "serie": [
     [
      "2026-09-28T19:19:18Z",
@@ -574,7 +574,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-15T09:37:01Z",
+   "ultima_lectura_utc": "2026-11-15T19:50:43Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -587,7 +587,7 @@
     "fecha_utc": "2026-09-28T19:19:22Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 142,
+   "racha_fallos": 143,
    "serie": [
     [
      "2026-09-28T19:19:22Z",
@@ -603,13 +603,13 @@
    "url": "https://www.liverpool.com.mx/tienda/pdp/consola-fija-portatil-switch-2-de-256-gb-edicion-bundle-sports-resort/1209428225",
    "valor_extra": 150000,
    "precio_objetivo": 950000,
-   "estado": "no_encontrado",
-   "motivo": "HTTP 404: el producto necesita URL nueva",
-   "vendedor": null,
-   "ultima_lectura_utc": "2026-11-15T09:37:04Z",
-   "precio_actual": null,
-   "precio_lista_actual": null,
-   "efectivo_actual": null,
+   "estado": "ok",
+   "motivo": "",
+   "vendedor": "Liverpool",
+   "ultima_lectura_utc": "2026-11-15T19:50:47Z",
+   "precio_actual": 1146522,
+   "precio_lista_actual": 1469900,
+   "efectivo_actual": 996522,
    "minimo": {
     "efectivo": 996522,
     "fecha_utc": "2026-11-06T09:31:57Z"
@@ -618,8 +618,8 @@
     "efectivo": 1202308,
     "fecha_utc": "2026-11-05T21:08:00Z"
    },
-   "lecturas_ok": 133,
-   "racha_fallos": 1,
+   "lecturas_ok": 134,
+   "racha_fallos": 0,
    "serie": [
     [
      "2026-09-28T21:07:18Z",
@@ -1152,6 +1152,10 @@
     [
      "2026-11-14T23:59:06Z",
      996522
+    ],
+    [
+     "2026-11-15T19:50:47Z",
+     996522
     ]
    ]
   },
@@ -1166,7 +1170,7 @@
    "estado": "bloqueado",
    "motivo": "redirigido fuera de la página de producto (/blocked)",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-15T09:37:06Z",
+   "ultima_lectura_utc": "2026-11-15T19:50:50Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1179,7 +1183,7 @@
     "fecha_utc": "2026-10-06T23:53:48Z"
    },
    "lecturas_ok": 7,
-   "racha_fallos": 1,
+   "racha_fallos": 2,
    "serie": [
     [
      "2026-09-28T19:19:26Z",
@@ -1222,7 +1226,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-11-15T09:37:09Z",
+   "ultima_lectura_utc": "2026-11-15T19:50:52Z",
    "precio_actual": 1099999,
    "precio_lista_actual": null,
    "efectivo_actual": 1099999,
@@ -1234,7 +1238,7 @@
     "efectivo": 1159999,
     "fecha_utc": "2026-11-13T09:44:22Z"
    },
-   "lecturas_ok": 143,
+   "lecturas_ok": 144,
    "racha_fallos": 0,
    "serie": [
     [
@@ -1808,6 +1812,10 @@
     [
      "2026-11-15T09:37:09Z",
      1099999
+    ],
+    [
+     "2026-11-15T19:50:52Z",
+     1099999
     ]
    ]
   },
@@ -1822,7 +1830,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-11-15T09:37:11Z",
+   "ultima_lectura_utc": "2026-11-15T19:50:56Z",
    "precio_actual": 1199999,
    "precio_lista_actual": null,
    "efectivo_actual": 1019999,
@@ -1834,7 +1842,7 @@
     "efectivo": 1079999,
     "fecha_utc": "2026-11-13T09:44:25Z"
    },
-   "lecturas_ok": 143,
+   "lecturas_ok": 144,
    "racha_fallos": 0,
    "serie": [
     [
@@ -2408,6 +2416,10 @@
     [
      "2026-11-15T09:37:11Z",
      1019999
+    ],
+    [
+     "2026-11-15T19:50:56Z",
+     1019999
     ]
    ]
   },
@@ -2422,7 +2434,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-15T09:37:14Z",
+   "ultima_lectura_utc": "2026-11-15T19:50:59Z",
    "precio_actual": 1189900,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1189900,
@@ -2434,7 +2446,7 @@
     "efectivo": 1399900,
     "fecha_utc": "2026-09-29T14:54:09Z"
    },
-   "lecturas_ok": 143,
+   "lecturas_ok": 144,
    "racha_fallos": 0,
    "serie": [
     [
@@ -3008,6 +3020,10 @@
     [
      "2026-11-15T09:37:14Z",
      1189900
+    ],
+    [
+     "2026-11-15T19:50:59Z",
+     1189900
     ]
    ]
   },
@@ -3019,10 +3035,10 @@
    "url": "https://www.sears.com.mx/producto/3522625/consola-nintendo-switch-2-mario-kart-world",
    "valor_extra": 180000,
    "precio_objetivo": 950000,
-   "estado": "ok",
+   "estado": "agotado",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-15T09:37:16Z",
+   "ultima_lectura_utc": "2026-11-15T19:51:02Z",
    "precio_actual": 1295900,
    "precio_lista_actual": 1524900,
    "efectivo_actual": 1115900,
