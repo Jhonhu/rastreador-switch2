@@ -1,10 +1,10 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-11-18T22:08:48Z",
+ "generado_utc": "2026-11-19T10:30:19Z",
  "precio_objetivo": 950000,
  "mejor": {
-  "producto_id": "gameplanet-mario-kart",
-  "efectivo": 1019999
+  "producto_id": "liverpool-bundle-sports",
+  "efectivo": 1070017
  },
  "productos": [
   {
@@ -18,7 +18,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-18T22:08:24Z",
+   "ultima_lectura_utc": "2026-11-19T10:29:57Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -31,7 +31,7 @@
     "fecha_utc": "2026-10-05T09:14:40Z"
    },
    "lecturas_ok": 133,
-   "racha_fallos": 4,
+   "racha_fallos": 5,
    "serie": [
     [
      "2026-09-28T19:19:18Z",
@@ -578,7 +578,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-18T22:08:26Z",
+   "ultima_lectura_utc": "2026-11-19T10:30:00Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -591,7 +591,7 @@
     "fecha_utc": "2026-09-28T19:19:22Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 150,
+   "racha_fallos": 151,
    "serie": [
     [
      "2026-09-28T19:19:22Z",
@@ -610,7 +610,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-11-18T22:08:30Z",
+   "ultima_lectura_utc": "2026-11-19T10:30:04Z",
    "precio_actual": 1220017,
    "precio_lista_actual": 1469900,
    "efectivo_actual": 1070017,
@@ -622,7 +622,7 @@
     "efectivo": 1202308,
     "fecha_utc": "2026-11-05T21:08:00Z"
    },
-   "lecturas_ok": 141,
+   "lecturas_ok": 142,
    "racha_fallos": 0,
    "serie": [
     [
@@ -1188,6 +1188,10 @@
     [
      "2026-11-18T22:08:30Z",
      1070017
+    ],
+    [
+     "2026-11-19T10:30:04Z",
+     1070017
     ]
    ]
   },
@@ -1202,7 +1206,7 @@
    "estado": "bloqueado",
    "motivo": "redirigido fuera de la página de producto (/blocked)",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-18T22:08:33Z",
+   "ultima_lectura_utc": "2026-11-19T10:30:06Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1215,7 +1219,7 @@
     "fecha_utc": "2026-10-06T23:53:48Z"
    },
    "lecturas_ok": 7,
-   "racha_fallos": 1,
+   "racha_fallos": 2,
    "serie": [
     [
      "2026-09-28T19:19:26Z",
@@ -1255,13 +1259,13 @@
    "url": "https://gameplanet.com/producto/consola-nintendo-switch-2-con-adaptador-nsw2/",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "ok",
-   "motivo": "",
-   "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-11-18T22:08:36Z",
-   "precio_actual": 1099999,
+   "estado": "bloqueado",
+   "motivo": "redirigido fuera de la página de producto (/catalogo)",
+   "vendedor": null,
+   "ultima_lectura_utc": "2026-11-19T10:30:08Z",
+   "precio_actual": null,
    "precio_lista_actual": null,
-   "efectivo_actual": 1099999,
+   "efectivo_actual": null,
    "minimo": {
     "efectivo": 1099999,
     "fecha_utc": "2026-09-28T19:19:31Z"
@@ -1271,7 +1275,7 @@
     "fecha_utc": "2026-11-13T09:44:22Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 0,
+   "racha_fallos": 1,
    "serie": [
     [
      "2026-09-28T19:19:31Z",
@@ -1887,13 +1891,13 @@
    "url": "https://gameplanet.com/producto/consola-nintendo-switch-2-con-mario-kart-world-fisico-y-adaptador-de-corriente-nsw2/",
    "valor_extra": 180000,
    "precio_objetivo": 950000,
-   "estado": "ok",
-   "motivo": "",
-   "vendedor": "Gameplanet",
-   "ultima_lectura_utc": "2026-11-18T22:08:38Z",
-   "precio_actual": 1199999,
+   "estado": "bloqueado",
+   "motivo": "redirigido fuera de la página de producto (/catalogo)",
+   "vendedor": null,
+   "ultima_lectura_utc": "2026-11-19T10:30:10Z",
+   "precio_actual": null,
    "precio_lista_actual": null,
-   "efectivo_actual": 1019999,
+   "efectivo_actual": null,
    "minimo": {
     "efectivo": 1019999,
     "fecha_utc": "2026-09-28T19:19:33Z"
@@ -1903,7 +1907,7 @@
     "fecha_utc": "2026-11-13T09:44:25Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 0,
+   "racha_fallos": 1,
    "serie": [
     [
      "2026-09-28T19:19:33Z",
@@ -2522,7 +2526,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-18T22:08:41Z",
+   "ultima_lectura_utc": "2026-11-19T10:30:13Z",
    "precio_actual": 1189900,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1189900,
@@ -2534,7 +2538,7 @@
     "efectivo": 1399900,
     "fecha_utc": "2026-09-29T14:54:09Z"
    },
-   "lecturas_ok": 151,
+   "lecturas_ok": 152,
    "racha_fallos": 0,
    "serie": [
     [
@@ -3140,6 +3144,10 @@
     [
      "2026-11-18T22:08:41Z",
      1189900
+    ],
+    [
+     "2026-11-19T10:30:13Z",
+     1189900
     ]
    ]
   },
@@ -3154,7 +3162,7 @@
    "estado": "agotado",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-18T22:08:45Z",
+   "ultima_lectura_utc": "2026-11-19T10:30:16Z",
    "precio_actual": 1295900,
    "precio_lista_actual": 1524900,
    "efectivo_actual": 1115900,
