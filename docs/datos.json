@@ -1,6 +1,6 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-11-19T22:17:51Z",
+ "generado_utc": "2026-11-20T10:11:49Z",
  "precio_objetivo": 950000,
  "mejor": {
   "producto_id": "liverpool-bundle-sports",
@@ -18,7 +18,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-11-19T22:17:26Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:25Z",
    "precio_actual": 1161917,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1161917,
@@ -30,7 +30,7 @@
     "efectivo": 1399900,
     "fecha_utc": "2026-10-05T09:14:40Z"
    },
-   "lecturas_ok": 134,
+   "lecturas_ok": 135,
    "racha_fallos": 0,
    "serie": [
     [
@@ -568,6 +568,10 @@
     [
      "2026-11-19T22:17:26Z",
      1161917
+    ],
+    [
+     "2026-11-20T10:11:25Z",
+     1161917
     ]
    ]
   },
@@ -582,7 +586,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-19T22:17:29Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:28Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -595,7 +599,7 @@
     "fecha_utc": "2026-09-28T19:19:22Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 152,
+   "racha_fallos": 153,
    "serie": [
     [
      "2026-09-28T19:19:22Z",
@@ -614,7 +618,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-11-19T22:17:32Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:31Z",
    "precio_actual": 1220017,
    "precio_lista_actual": 1469900,
    "efectivo_actual": 1070017,
@@ -626,7 +630,7 @@
     "efectivo": 1202308,
     "fecha_utc": "2026-11-05T21:08:00Z"
    },
-   "lecturas_ok": 143,
+   "lecturas_ok": 144,
    "racha_fallos": 0,
    "serie": [
     [
@@ -1200,6 +1204,10 @@
     [
      "2026-11-19T22:17:32Z",
      1070017
+    ],
+    [
+     "2026-11-20T10:11:31Z",
+     1070017
     ]
    ]
   },
@@ -1214,7 +1222,7 @@
    "estado": "bloqueado",
    "motivo": "redirigido fuera de la página de producto (/blocked)",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-19T22:17:34Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:34Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1227,7 +1235,7 @@
     "fecha_utc": "2026-10-06T23:53:48Z"
    },
    "lecturas_ok": 7,
-   "racha_fallos": 3,
+   "racha_fallos": 4,
    "serie": [
     [
      "2026-09-28T19:19:26Z",
@@ -1270,7 +1278,7 @@
    "estado": "bloqueado",
    "motivo": "redirigido fuera de la página de producto (/catalogo)",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-19T22:17:37Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:37Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1283,7 +1291,7 @@
     "fecha_utc": "2026-11-13T09:44:22Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 2,
+   "racha_fallos": 3,
    "serie": [
     [
      "2026-09-28T19:19:31Z",
@@ -1902,7 +1910,7 @@
    "estado": "bloqueado",
    "motivo": "redirigido fuera de la página de producto (/catalogo)",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-19T22:17:40Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:40Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1915,7 +1923,7 @@
     "fecha_utc": "2026-11-13T09:44:25Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 2,
+   "racha_fallos": 3,
    "serie": [
     [
      "2026-09-28T19:19:33Z",
@@ -2534,7 +2542,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-19T22:17:42Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:42Z",
    "precio_actual": 1189900,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1189900,
@@ -2546,7 +2554,7 @@
     "efectivo": 1399900,
     "fecha_utc": "2026-09-29T14:54:09Z"
    },
-   "lecturas_ok": 153,
+   "lecturas_ok": 154,
    "racha_fallos": 0,
    "serie": [
     [
@@ -3160,6 +3168,10 @@
     [
      "2026-11-19T22:17:42Z",
      1189900
+    ],
+    [
+     "2026-11-20T10:11:42Z",
+     1189900
     ]
    ]
   },
@@ -3174,7 +3186,7 @@
    "estado": "agotado",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-19T22:17:47Z",
+   "ultima_lectura_utc": "2026-11-20T10:11:46Z",
    "precio_actual": 1295900,
    "precio_lista_actual": 1524900,
    "efectivo_actual": 1115900,
