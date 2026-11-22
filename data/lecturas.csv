@@ -1262,3 +1262,11 @@ fecha_utc,producto_id,tienda,estado,precio_centavos,precio_lista_centavos,vended
 2026-11-22T09:56:44Z,gameplanet-mario-kart,gameplanet,bloqueado,,,,redirigido fuera de la página de producto (/catalogo)
 2026-11-22T09:56:46Z,sears-estandar,sears,ok,1189900,1399900,SEARS,
 2026-11-22T09:56:48Z,sears-mario-kart,sears,agotado,1295900,1524900,SEARS,
+2026-11-22T20:46:19Z,liverpool-estandar,liverpool,no_encontrado,,,,HTTP 404: el producto necesita URL nueva
+2026-11-22T20:46:21Z,liverpool-bundle-pokemon,liverpool,no_encontrado,,,,HTTP 404: el producto necesita URL nueva
+2026-11-22T20:46:25Z,liverpool-bundle-sports,liverpool,ok,1220017,1469900,Liverpool,
+2026-11-22T20:46:27Z,walmart-estandar,walmart,tercero,1019900,1366900,Fabrica directo,vendido por Fabrica directo
+2026-11-22T20:46:30Z,gameplanet-estandar,gameplanet,bloqueado,,,,redirigido fuera de la página de producto (/catalogo)
+2026-11-22T20:46:32Z,gameplanet-mario-kart,gameplanet,bloqueado,,,,redirigido fuera de la página de producto (/catalogo)
+2026-11-22T20:46:35Z,sears-estandar,sears,ok,1189900,1399900,SEARS,
+2026-11-22T20:46:39Z,sears-mario-kart,sears,agotado,1295900,1524900,SEARS,
