@@ -1,6 +1,6 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-11-24T01:45:09Z",
+ "generado_utc": "2026-11-24T12:39:40Z",
  "precio_objetivo": 950000,
  "mejor": {
   "producto_id": "sears-estandar",
@@ -18,7 +18,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-24T01:44:44Z",
+   "ultima_lectura_utc": "2026-11-24T12:39:17Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -31,7 +31,7 @@
     "fecha_utc": "2026-10-05T09:14:40Z"
    },
    "lecturas_ok": 135,
-   "racha_fallos": 7,
+   "racha_fallos": 8,
    "serie": [
     [
      "2026-09-28T19:19:18Z",
@@ -586,7 +586,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-24T01:44:47Z",
+   "ultima_lectura_utc": "2026-11-24T12:39:20Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -599,7 +599,7 @@
     "fecha_utc": "2026-09-28T19:19:22Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 160,
+   "racha_fallos": 161,
    "serie": [
     [
      "2026-09-28T19:19:22Z",
@@ -618,7 +618,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-11-24T01:44:51Z",
+   "ultima_lectura_utc": "2026-11-24T12:39:23Z",
    "precio_actual": 1352308,
    "precio_lista_actual": 1469900,
    "efectivo_actual": 1202308,
@@ -628,9 +628,9 @@
    },
    "maximo": {
     "efectivo": 1202308,
-    "fecha_utc": "2026-11-24T01:44:51Z"
+    "fecha_utc": "2026-11-24T12:39:23Z"
    },
-   "lecturas_ok": 151,
+   "lecturas_ok": 152,
    "racha_fallos": 0,
    "serie": [
     [
@@ -1236,6 +1236,10 @@
     [
      "2026-11-24T01:44:51Z",
      1202308
+    ],
+    [
+     "2026-11-24T12:39:23Z",
+     1202308
     ]
    ]
   },
@@ -1247,13 +1251,13 @@
    "url": "https://www.walmart.com.mx/ip/consola-nintendo-switch-2-256-gb/00004549688581",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "tercero",
-   "motivo": "vendido por Fabrica directo",
-   "vendedor": "Fabrica directo",
-   "ultima_lectura_utc": "2026-11-24T01:44:54Z",
-   "precio_actual": 1019900,
-   "precio_lista_actual": 1366900,
-   "efectivo_actual": 1019900,
+   "estado": "bloqueado",
+   "motivo": "redirigido fuera de la página de producto (/blocked)",
+   "vendedor": null,
+   "ultima_lectura_utc": "2026-11-24T12:39:26Z",
+   "precio_actual": null,
+   "precio_lista_actual": null,
+   "efectivo_actual": null,
    "minimo": {
     "efectivo": 999900,
     "fecha_utc": "2026-11-13T20:55:38Z"
@@ -1263,7 +1267,7 @@
     "fecha_utc": "2026-10-06T23:53:48Z"
    },
    "lecturas_ok": 7,
-   "racha_fallos": 0,
+   "racha_fallos": 1,
    "serie": [
     [
      "2026-09-28T19:19:26Z",
@@ -1304,9 +1308,9 @@
    "valor_extra": 0,
    "precio_objetivo": 950000,
    "estado": "bloqueado",
-   "motivo": "redirigido fuera de la página de producto (/catalogo)",
+   "motivo": "HTTP 403",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-24T01:44:57Z",
+   "ultima_lectura_utc": "2026-11-24T12:39:28Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1319,7 +1323,7 @@
     "fecha_utc": "2026-11-13T09:44:22Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 10,
+   "racha_fallos": 11,
    "serie": [
     [
      "2026-09-28T19:19:31Z",
@@ -1936,9 +1940,9 @@
    "valor_extra": 180000,
    "precio_objetivo": 950000,
    "estado": "bloqueado",
-   "motivo": "redirigido fuera de la página de producto (/catalogo)",
+   "motivo": "HTTP 403",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-24T01:44:59Z",
+   "ultima_lectura_utc": "2026-11-24T12:39:30Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1951,7 +1955,7 @@
     "fecha_utc": "2026-11-13T09:44:25Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 10,
+   "racha_fallos": 11,
    "serie": [
     [
      "2026-09-28T19:19:33Z",
@@ -2570,7 +2574,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-24T01:45:01Z",
+   "ultima_lectura_utc": "2026-11-24T12:39:33Z",
    "precio_actual": 1189900,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1189900,
@@ -2582,7 +2586,7 @@
     "efectivo": 1399900,
     "fecha_utc": "2026-09-29T14:54:09Z"
    },
-   "lecturas_ok": 161,
+   "lecturas_ok": 162,
    "racha_fallos": 0,
    "serie": [
     [
@@ -3228,6 +3232,10 @@
     [
      "2026-11-24T01:45:01Z",
      1189900
+    ],
+    [
+     "2026-11-24T12:39:33Z",
+     1189900
     ]
    ]
   },
@@ -3242,7 +3250,7 @@
    "estado": "agotado",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-24T01:45:04Z",
+   "ultima_lectura_utc": "2026-11-24T12:39:36Z",
    "precio_actual": 1295900,
    "precio_lista_actual": 1524900,
    "efectivo_actual": 1115900,
