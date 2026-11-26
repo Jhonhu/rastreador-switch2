@@ -1,6 +1,6 @@
 {
  "version_formato": 1,
- "generado_utc": "2026-11-25T23:10:21Z",
+ "generado_utc": "2026-11-26T11:07:00Z",
  "precio_objetivo": 950000,
  "mejor": {
   "producto_id": "sears-estandar",
@@ -15,13 +15,13 @@
    "url": "https://www.liverpool.com.mx/tienda/pdp/consola-nintendo-switch-2-de-256-gb-edicion-estandar/1177646322",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "no_encontrado",
-   "motivo": "HTTP 404: el producto necesita URL nueva",
-   "vendedor": null,
-   "ultima_lectura_utc": "2026-11-25T23:09:56Z",
-   "precio_actual": null,
-   "precio_lista_actual": null,
-   "efectivo_actual": null,
+   "estado": "ok",
+   "motivo": "",
+   "vendedor": "Liverpool",
+   "ultima_lectura_utc": "2026-11-26T11:06:37Z",
+   "precio_actual": 1287908,
+   "precio_lista_actual": 1399900,
+   "efectivo_actual": 1287908,
    "minimo": {
     "efectivo": 1091922,
     "fecha_utc": "2026-11-06T09:31:51Z"
@@ -30,8 +30,8 @@
     "efectivo": 1399900,
     "fecha_utc": "2026-10-05T09:14:40Z"
    },
-   "lecturas_ok": 137,
-   "racha_fallos": 1,
+   "lecturas_ok": 138,
+   "racha_fallos": 0,
    "serie": [
     [
      "2026-09-28T19:19:18Z",
@@ -580,6 +580,10 @@
     [
      "2026-11-25T11:28:56Z",
      1287908
+    ],
+    [
+     "2026-11-26T11:06:37Z",
+     1287908
     ]
    ]
   },
@@ -594,7 +598,7 @@
    "estado": "no_encontrado",
    "motivo": "HTTP 404: el producto necesita URL nueva",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-25T23:09:59Z",
+   "ultima_lectura_utc": "2026-11-26T11:06:40Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -607,7 +611,7 @@
     "fecha_utc": "2026-09-28T19:19:22Z"
    },
    "lecturas_ok": 1,
-   "racha_fallos": 164,
+   "racha_fallos": 165,
    "serie": [
     [
      "2026-09-28T19:19:22Z",
@@ -626,7 +630,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "Liverpool",
-   "ultima_lectura_utc": "2026-11-25T23:10:02Z",
+   "ultima_lectura_utc": "2026-11-26T11:06:43Z",
    "precio_actual": 1352308,
    "precio_lista_actual": 1469900,
    "efectivo_actual": 1202308,
@@ -636,9 +640,9 @@
    },
    "maximo": {
     "efectivo": 1202308,
-    "fecha_utc": "2026-11-25T23:10:02Z"
+    "fecha_utc": "2026-11-26T11:06:43Z"
    },
-   "lecturas_ok": 155,
+   "lecturas_ok": 156,
    "racha_fallos": 0,
    "serie": [
     [
@@ -1260,6 +1264,10 @@
     [
      "2026-11-25T23:10:02Z",
      1202308
+    ],
+    [
+     "2026-11-26T11:06:43Z",
+     1202308
     ]
    ]
   },
@@ -1271,13 +1279,13 @@
    "url": "https://www.walmart.com.mx/ip/consola-nintendo-switch-2-256-gb/00004549688581",
    "valor_extra": 0,
    "precio_objetivo": 950000,
-   "estado": "tercero",
-   "motivo": "vendido por Fabrica directo",
-   "vendedor": "Fabrica directo",
-   "ultima_lectura_utc": "2026-11-25T23:10:04Z",
-   "precio_actual": 1019900,
-   "precio_lista_actual": 1366900,
-   "efectivo_actual": 1019900,
+   "estado": "bloqueado",
+   "motivo": "redirigido fuera de la página de producto (/blocked)",
+   "vendedor": null,
+   "ultima_lectura_utc": "2026-11-26T11:06:45Z",
+   "precio_actual": null,
+   "precio_lista_actual": null,
+   "efectivo_actual": null,
    "minimo": {
     "efectivo": 999900,
     "fecha_utc": "2026-11-13T20:55:38Z"
@@ -1287,7 +1295,7 @@
     "fecha_utc": "2026-10-06T23:53:48Z"
    },
    "lecturas_ok": 7,
-   "racha_fallos": 0,
+   "racha_fallos": 1,
    "serie": [
     [
      "2026-09-28T19:19:26Z",
@@ -1330,7 +1338,7 @@
    "estado": "bloqueado",
    "motivo": "redirigido fuera de la página de producto (/catalogo)",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-25T23:10:07Z",
+   "ultima_lectura_utc": "2026-11-26T11:06:48Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1343,7 +1351,7 @@
     "fecha_utc": "2026-11-13T09:44:22Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 14,
+   "racha_fallos": 15,
    "serie": [
     [
      "2026-09-28T19:19:31Z",
@@ -1962,7 +1970,7 @@
    "estado": "bloqueado",
    "motivo": "redirigido fuera de la página de producto (/catalogo)",
    "vendedor": null,
-   "ultima_lectura_utc": "2026-11-25T23:10:10Z",
+   "ultima_lectura_utc": "2026-11-26T11:06:50Z",
    "precio_actual": null,
    "precio_lista_actual": null,
    "efectivo_actual": null,
@@ -1975,7 +1983,7 @@
     "fecha_utc": "2026-11-13T09:44:25Z"
    },
    "lecturas_ok": 151,
-   "racha_fallos": 14,
+   "racha_fallos": 15,
    "serie": [
     [
      "2026-09-28T19:19:33Z",
@@ -2594,7 +2602,7 @@
    "estado": "ok",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-25T23:10:12Z",
+   "ultima_lectura_utc": "2026-11-26T11:06:53Z",
    "precio_actual": 1189900,
    "precio_lista_actual": 1399900,
    "efectivo_actual": 1189900,
@@ -2606,7 +2614,7 @@
     "efectivo": 1399900,
     "fecha_utc": "2026-09-29T14:54:09Z"
    },
-   "lecturas_ok": 165,
+   "lecturas_ok": 166,
    "racha_fallos": 0,
    "serie": [
     [
@@ -3268,6 +3276,10 @@
     [
      "2026-11-25T23:10:12Z",
      1189900
+    ],
+    [
+     "2026-11-26T11:06:53Z",
+     1189900
     ]
    ]
   },
@@ -3282,7 +3294,7 @@
    "estado": "agotado",
    "motivo": "",
    "vendedor": "SEARS",
-   "ultima_lectura_utc": "2026-11-25T23:10:18Z",
+   "ultima_lectura_utc": "2026-11-26T11:06:57Z",
    "precio_actual": 1295900,
    "precio_lista_actual": 1524900,
    "efectivo_actual": 1115900,
