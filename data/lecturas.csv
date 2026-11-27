@@ -1334,3 +1334,11 @@ fecha_utc,producto_id,tienda,estado,precio_centavos,precio_lista_centavos,vended
 2026-11-26T23:06:01Z,gameplanet-mario-kart,gameplanet,bloqueado,,,,redirigido fuera de la página de producto (/catalogo)
 2026-11-26T23:06:03Z,sears-estandar,sears,ok,1189900,1399900,SEARS,
 2026-11-26T23:06:05Z,sears-mario-kart,sears,agotado,1295900,1524900,SEARS,
+2026-11-27T11:00:39Z,liverpool-estandar,liverpool,no_encontrado,,,,HTTP 404: el producto necesita URL nueva
+2026-11-27T11:00:42Z,liverpool-bundle-pokemon,liverpool,no_encontrado,,,,HTTP 404: el producto necesita URL nueva
+2026-11-27T11:00:45Z,liverpool-bundle-sports,liverpool,ok,1220017,1469900,Liverpool,
+2026-11-27T11:00:48Z,walmart-estandar,walmart,bloqueado,,,,redirigido fuera de la página de producto (/blocked)
+2026-11-27T11:00:51Z,gameplanet-estandar,gameplanet,bloqueado,,,,redirigido fuera de la página de producto (/products/consola-nintendo-switch-2-con-adaptador-nintendo-s)
+2026-11-27T11:00:53Z,gameplanet-mario-kart,gameplanet,bloqueado,,,,redirigido fuera de la página de producto (/products/consola-nintendo-switch-2-con-mario-kart-world-fis)
+2026-11-27T11:00:56Z,sears-estandar,sears,ok,1189900,1399900,SEARS,
+2026-11-27T11:01:00Z,sears-mario-kart,sears,agotado,1295900,1524900,SEARS,
